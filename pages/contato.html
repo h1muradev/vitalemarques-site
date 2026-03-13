@@ -1,111 +1,182 @@
-<!doctype html>
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contato | Vital & Marques</title>
-  <meta name="description" content="Fale com a Vital & Marques. Atendimento em Valparaíso de Goiás e em todo o Brasil." />
-  <link rel="stylesheet" href="/assets/css/style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato | Vital & Marques Assessoria Contábil</title>
+  <meta name="description" content="Fale com a Vital & Marques. Atendimento em Valparaíso de Goiás, Brasília e online para empresas de todo o Brasil." />
+  <meta name="theme-color" content="#0d2546" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
-
-  <header class="topbar">
-    <div class="container topbar__inner">
-      <a class="brand" href="index.html" aria-label="Vital & Marques - Início">
-        <img src="assets/logo.png" alt="Vital & Marques" class="brand__logo" />
+  <header id="header" class="site-header">
+    <div class="container header-content">
+      <a href="../index.html" class="brand" aria-label="Voltar para o início">
+        <img src="../assets/img/logo-vital-marques.svg" alt="Vital & Marques Assessoria Contábil" class="brand-logo" width="180" height="52" decoding="async">
       </a>
 
-      <button class="menuBtn" aria-label="Abrir menu" aria-expanded="false">☰</button>
-
-      <nav class="nav" data-nav>
-        <a class="nav__link" href="index.html">Início</a>
-        <a class="nav__link" href="sobre.html">Sobre nós</a>
-        <a class="nav__link" href="servicos.html">Serviços</a>
-        <a class="nav__link" href="index.html#planos">Planos</a>
-        <a class="nav__link is-active" href="contato.html">Contato</a>
-
-        <div class="nav__portais nav__portais--mobile">
-          <a class="portalLink" id="navPortalCliente_m" href="#" target="_blank" rel="noopener"><span class="portalIcon">👤</span> Portal do Cliente</a>
-          <a class="portalLink" id="navPortalFuncionario_m" href="#" target="_blank" rel="noopener"><span class="portalIcon">🧑‍💼</span> Portal do Funcionário</a>
-        </div>
-
-        <a class="btn btn--whats btn--block nav__whats--mobile" id="ctaTopWhats_m" href="#" target="_blank" rel="noopener">WhatsApp</a>
+      <nav class="desktop-nav" aria-label="Navegação principal">
+        <a href="../index.html">Início</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="planos.html">Planos</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html" class="is-active">Contato</a>
       </nav>
 
-      <div class="topbar__actions">
-        <a class="portalLink portalLink--desktop" id="navPortalCliente" href="#" target="_blank" rel="noopener"><span class="portalIcon">👤</span> Portal do Cliente</a>
-        <a class="portalLink portalLink--desktop" id="navPortalFuncionario" href="#" target="_blank" rel="noopener"><span class="portalIcon">🧑‍💼</span> Portal do Funcionário</a>
-        <a class="btn btn--whats" id="ctaTopWhats" href="#" target="_blank" rel="noopener">WhatsApp</a>
+      <div class="header-actions">
+        <a class="btn-portal" href="https://SEU-LINK-PORTAL-CLIENTE" target="_blank" rel="noopener">
+          <i class="fa-solid fa-circle-user" aria-hidden="true"></i><span>Portal do Cliente</span>
+        </a>
+        <a class="btn-portal btn-portal--secondary" href="https://SEU-LINK-PORTAL-FUNCIONARIO" target="_blank" rel="noopener">
+          <i class="fa-solid fa-user-gear" aria-hidden="true"></i><span>Portal do Funcionário</span>
+        </a>
+        <button class="mobile-menu-icon" id="mobile-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </div>
     </div>
+
+    <nav class="mobile-nav" id="mobile-menu" aria-label="Navegação mobile">
+      <a href="../index.html">Início</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="planos.html">Planos</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+      <div class="mobile-divider" aria-hidden="true"></div>
+      <a href="https://SEU-LINK-PORTAL-CLIENTE" target="_blank" rel="noopener"><i class="fa-solid fa-circle-user" aria-hidden="true"></i> Portal do Cliente</a>
+      <a href="https://SEU-LINK-PORTAL-FUNCIONARIO" target="_blank" rel="noopener"><i class="fa-solid fa-user-gear" aria-hidden="true"></i> Portal do Funcionário</a>
+      <a class="mobile-whatsapp" href="https://wa.me/556130253145?text=Ol%C3%A1%2C%20quero%20falar%20com%20a%20Vital%20e%20Marques." target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i> Falar no WhatsApp
+      </a>
+    </nav>
   </header>
 
-  <section class="pageHero">
-    <div class="container pageHero__inner">
-      <h1>Contato</h1>
-      <p>Fale com nosso time e receba orientação do plano ideal.</p>
-    </div>
-  </section>
-
-  <section class="section section--soft">
-    <div class="container">
-      <div class="sectionTitle">
-        <div>
-          <h2>Venha tomar um café conosco</h2>
-          <div class="underline"></div>
-          <p>Estamos prontos para te receber em nosso escritório.</p>
-        </div>
-        <a class="btn btn--primary" id="ctaRota" href="#" target="_blank" rel="noopener">Traçar rota</a>
-      </div>
-
-      <div class="location">
-        <div class="location__info">
-          <div class="infoLine"><b>Endereço</b><span>Etapa A, Casa 06 — Valparaíso de Goiás — GO</span></div>
-          <div class="infoLine"><b>Horário</b><span>Segunda a Sexta: 08h às 18h</span></div>
-          <div class="infoLine"><b>WhatsApp</b><a class="link" id="ctaContatoWhats" href="#" target="_blank" rel="noopener">Chamar agora</a></div>
-
-          <div class="notice" style="margin-top:12px;">
-            <b>Atendimento:</b> para agilizar, envie sua dúvida e documentos pelo canal oficial.
+  <main>
+    <section class="page-hero">
+      <div class="page-hero-bg" aria-hidden="true"></div>
+      <div class="container page-hero-content">
+        <div class="page-hero-text reveal-left">
+          <div class="badge"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Atendimento em Valparaíso, Brasília e online</div>
+          <h1>Entre em contato com a Vital & Marques</h1>
+          <p>Se você quer abrir empresa, organizar a rotina contábil ou entender qual plano faz mais sentido, fale com a nossa equipe.</p>
+          <div class="cta-row">
+            <a href="https://wa.me/556130253145?text=Ol%C3%A1%2C%20quero%20falar%20com%20a%20Vital%20e%20Marques." class="btn-cta" target="_blank" rel="noopener">
+              <i class="fab fa-whatsapp"></i> Chamar no WhatsApp
+            </a>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=-16.068816381930148,-47.97944651854982" class="btn-secondary" target="_blank" rel="noopener">
+              Traçar rota <i class="fa-solid fa-arrow-right"></i>
+            </a>
           </div>
         </div>
-
-        <div class="map">
-          <iframe
-            title="Mapa Vital & Marques"
-            src="https://www.google.com/maps?q=Valpara%C3%ADso%20de%20Goi%C3%A1s&output=embed"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
+        <div class="page-hero-card reveal-right">
+          <div class="mini-kpi">
+            <i class="fa-solid fa-clock" aria-hidden="true"></i>
+            <div><strong>Horário comercial</strong><span>segunda a sexta, das 8h às 18h</span></div>
+          </div>
+          <div class="mini-kpi">
+            <i class="fa-solid fa-comments" aria-hidden="true"></i>
+            <div><strong>Canal mais rápido</strong><span>WhatsApp para diagnóstico e suporte inicial</span></div>
+          </div>
+          <div class="mini-kpi">
+            <i class="fa-solid fa-mug-hot" aria-hidden="true"></i>
+            <div><strong>Atendimento presencial</strong><span>vamos adorar receber você para um café</span></div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="ctaFinal">
-    <div class="ctaFinal__bg" role="img" aria-label="Imagem de fundo CTA"></div>
-    <div class="container ctaFinal__inner">
-      <h2>Seu sucesso começa com uma decisão.</h2>
-      <p>Clique abaixo e fale diretamente com o time Vital & Marques.</p>
-      <a class="btn btn--whats btn--big" id="ctaFinalWhats" href="#" target="_blank" rel="noopener">Falar agora</a>
-    </div>
-  </section>
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <h2>Venha tomar um café conosco</h2>
+          <p>Estamos prontos para te receber e entender o momento da sua empresa.</p>
+        </div>
 
-  <footer class="footer">
-    <div class="container footer__inner">
-      <div>© <span id="year"></span> Vital & Marques</div>
-      <div class="footer__links">
-        <a href="sobre.html">Sobre</a>
+        <div class="location-grid">
+          <div class="info-stack reveal-left">
+            <div class="info-item">
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+              <div>
+                <h4>Endereço</h4>
+                <p>Etapa A, Casa 06 — Valparaíso de Goiás — GO</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <i class="fa-solid fa-business-time" aria-hidden="true"></i>
+              <div>
+                <h4>Horário de atendimento</h4>
+                <p>Segunda a sexta, das 08h às 18h</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+              <div>
+                <h4>WhatsApp</h4>
+                <p><a href="https://wa.me/556130253145?text=Ol%C3%A1%2C%20quero%20falar%20com%20a%20Vital%20e%20Marques." target="_blank" rel="noopener">Chamar agora</a></p>
+              </div>
+            </div>
+
+            <div class="notice-card">
+              <strong>Atendimento mais rápido:</strong> se puder, já envie sua dúvida, sua atividade e o que você precisa resolver. Isso ajuda a indicar o plano ou serviço ideal.
+            </div>
+          </div>
+
+          <div class="location-map reveal-right">
+            <iframe
+              title="Mapa Vital & Marques"
+              src="https://maps.google.com/maps?q=-16.068816381930148,-47.97944651854982&z=17&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="container relative">
+        <h2>Seu próximo passo pode começar agora</h2>
+        <p>Clique abaixo e fale diretamente com o time Vital & Marques.</p>
+        <a href="https://wa.me/556130253145?text=Ol%C3%A1%2C%20quero%20falar%20com%20a%20Vital%20e%20Marques." class="btn-cta btn-big" target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i> Falar agora
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-col">
+        <img src="../assets/img/logo-vital-marques-white.svg" alt="Vital & Marques" class="footer-logo" width="200" height="58">
+        <p>Assessoria contábil com foco em clareza, processo e segurança para empresas.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Navegação</h3>
+        <a href="../index.html">Início</a>
         <a href="servicos.html">Serviços</a>
-        <a href="index.html#planos">Planos</a>
+        <a href="planos.html">Planos</a>
+        <a href="sobre.html">Sobre</a>
+      </div>
+      <div class="footer-col">
+        <h3>Contato</h3>
+        <a href="https://wa.me/556130253145?text=Ol%C3%A1%2C%20quero%20falar%20com%20a%20Vital%20e%20Marques." target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=-16.068816381930148,-47.97944651854982" target="_blank" rel="noopener">Traçar rota</a>
       </div>
     </div>
+    <div class="copy">© <span id="year"></span> Vital & Marques Assessoria Contábil</div>
   </footer>
 
-  <a class="floatWhats" id="floatWhats" href="#" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">
-    <span class="floatWhats__pulse"></span>
-    <span class="floatWhats__icon">Whats</span>
+  <a class="whatsapp-float" href="https://wa.me/556130253145?text=Ol%C3%A1%2C%20quero%20falar%20com%20a%20Vital%20e%20Marques." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i><span class="float-text">Atendimento</span>
   </a>
 
-  <script src="/assets/js/script.js"></script>
+  <script src="../assets/js/script.js" defer></script>
 </body>
 </html>

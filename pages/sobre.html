@@ -1,102 +1,194 @@
-<!doctype html>
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sobre nós | Vital & Marques</title>
-  <meta name="description" content="Conheça a Vital & Marques. Contabilidade com foco em processo, segurança e regularidade." />
-  <link rel="stylesheet" href="/assets/css/style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sobre | Vital & Marques Assessoria Contábil</title>
+  <meta name="description" content="Conheça a Vital & Marques: uma assessoria contábil focada em processo, clareza, previsibilidade e atendimento humanizado." />
+  <meta name="theme-color" content="#0d2546" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
-
-  <header class="topbar">
-    <div class="container topbar__inner">
-      <a class="brand" href="/index.html" aria-label="Vital & Marques - Início">
-        <img src="assets/logo.png" alt="Vital & Marques" class="brand__logo" />
+  <header id="header" class="site-header">
+    <div class="container header-content">
+      <a href="../index.html" class="brand" aria-label="Voltar para o início">
+        <img src="../assets/img/logo-vital-marques.svg" alt="Vital & Marques Assessoria Contábil" class="brand-logo" width="180" height="52" decoding="async">
       </a>
 
-      <button class="menuBtn" aria-label="Abrir menu" aria-expanded="false">☰</button>
-
-      <nav class="nav" data-nav>
-        <a class="nav__link" href="/index.html">Início</a>
-        <a class="nav__link is-active" href="sobre.html">Sobre nós</a>
-        <a class="nav__link" href="servicos.html">Serviços</a>
-        <a class="nav__link" href="index.html#planos">Planos</a>
-        <a class="nav__link" href="contato.html">Contato</a>
-
-        <div class="nav__portais nav__portais--mobile">
-          <a class="portalLink" id="navPortalCliente_m" href="#" target="_blank" rel="noopener"><span class="portalIcon">👤</span> Portal do Cliente</a>
-          <a class="portalLink" id="navPortalFuncionario_m" href="#" target="_blank" rel="noopener"><span class="portalIcon">🧑‍💼</span> Portal do Funcionário</a>
-        </div>
-
-        <a class="btn btn--whats btn--block nav__whats--mobile" id="ctaTopWhats_m" href="#" target="_blank" rel="noopener">WhatsApp</a>
+      <nav class="desktop-nav" aria-label="Navegação principal">
+        <a href="../index.html">Início</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="planos.html">Planos</a>
+        <a href="sobre.html" class="is-active">Sobre</a>
+        <a href="contato.html">Contato</a>
       </nav>
 
-      <div class="topbar__actions">
-        <a class="portalLink portalLink--desktop" id="navPortalCliente" href="#" target="_blank" rel="noopener"><span class="portalIcon">👤</span> Portal do Cliente</a>
-        <a class="portalLink portalLink--desktop" id="navPortalFuncionario" href="#" target="_blank" rel="noopener"><span class="portalIcon">🧑‍💼</span> Portal do Funcionário</a>
-        <a class="btn btn--whats" id="ctaTopWhats" href="#" target="_blank" rel="noopener">WhatsApp</a>
+      <div class="header-actions">
+        <a class="btn-portal" href="https://SEU-LINK-PORTAL-CLIENTE" target="_blank" rel="noopener">
+          <i class="fa-solid fa-circle-user" aria-hidden="true"></i><span>Portal do Cliente</span>
+        </a>
+        <a class="btn-portal btn-portal--secondary" href="https://SEU-LINK-PORTAL-FUNCIONARIO" target="_blank" rel="noopener">
+          <i class="fa-solid fa-user-gear" aria-hidden="true"></i><span>Portal do Funcionário</span>
+        </a>
+        <button class="mobile-menu-icon" id="mobile-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </div>
     </div>
+
+    <nav class="mobile-nav" id="mobile-menu" aria-label="Navegação mobile">
+      <a href="../index.html">Início</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="planos.html">Planos</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+      <div class="mobile-divider" aria-hidden="true"></div>
+      <a href="https://SEU-LINK-PORTAL-CLIENTE" target="_blank" rel="noopener"><i class="fa-solid fa-circle-user" aria-hidden="true"></i> Portal do Cliente</a>
+      <a href="https://SEU-LINK-PORTAL-FUNCIONARIO" target="_blank" rel="noopener"><i class="fa-solid fa-user-gear" aria-hidden="true"></i> Portal do Funcionário</a>
+      <a class="mobile-whatsapp" href="https://wa.me/556130253145?text=Ol%C3%A1%2C%20quero%20conhecer%20melhor%20a%20Vital%20e%20Marques." target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i> Falar no WhatsApp
+      </a>
+    </nav>
   </header>
 
-  <section class="pageHero">
-    <div class="container pageHero__inner">
-      <h1>Sobre nós</h1>
-      <p>Uma contabilidade que trabalha com padrão, processo e clareza de escopo.</p>
-    </div>
-  </section>
+  <main>
+    <section class="page-hero">
+      <div class="page-hero-bg" aria-hidden="true"></div>
+      <div class="container page-hero-content">
+        <div class="page-hero-text reveal-left">
+          <div class="badge"><i class="fa-solid fa-handshake-angle" aria-hidden="true"></i> Atendimento com processo, clareza e proximidade</div>
+          <h1>Sobre a Vital & Marques</h1>
+          <p>Somos uma assessoria contábil que combina rotina organizada, orientação clara e atendimento humanizado para empresas que querem crescer com segurança.</p>
+          <div class="trust-icons">
+            <span><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Comunicação objetiva</span>
+            <span><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Escopo transparente</span>
+            <span><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Suporte próximo</span>
+          </div>
+        </div>
+        <div class="page-hero-card reveal-right">
+          <div class="mini-kpi">
+            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+            <div><strong>Segurança e conformidade</strong><span>menos improviso e mais previsibilidade</span></div>
+          </div>
+          <div class="mini-kpi">
+            <i class="fa-solid fa-comments" aria-hidden="true"></i>
+            <div><strong>Atendimento claro</strong><span>cada demanda no canal e no fluxo certo</span></div>
+          </div>
+          <div class="mini-kpi">
+            <i class="fa-solid fa-chart-simple" aria-hidden="true"></i>
+            <div><strong>Visão de crescimento</strong><span>contabilidade como apoio à decisão</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="aboutGrid">
-        <div class="aboutCard">
-          <h2>Nossa proposta</h2>
-          <div class="underline"></div>
-          <p>
-            Queremos que o cliente tenha previsibilidade: o que está incluso, como solicitar e quando recebe retorno.
-            Isso reduz urgências desnecessárias e melhora o atendimento.
-          </p>
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <h2>O que nos guia</h2>
+          <p>Uma operação contábil bem feita precisa ser confiável, organizada e fácil de entender.</p>
         </div>
 
-        <div class="aboutCard">
-          <h2>Como trabalhamos</h2>
-          <div class="underline"></div>
-          <ul class="bullet">
-            <li>Solicitações por canal oficial (WhatsApp/portal)</li>
-            <li>Padronização de documentos</li>
-            <li>Prazos e prioridades definidos</li>
-            <li>Escopo por plano + avulsos sob orçamento</li>
-          </ul>
+        <div class="split-2">
+          <article class="service-card reveal-up">
+            <div class="icon-box"><i class="fa-solid fa-bullseye"></i></div>
+            <h3>Nossa proposta</h3>
+            <p>Dar previsibilidade para o cliente: o que está incluso, como solicitar, qual o prazo e qual o melhor caminho para resolver cada demanda sem ruído.</p>
+          </article>
+
+          <article class="service-card reveal-up" style="transition-delay:.08s">
+            <div class="icon-box"><i class="fa-solid fa-gears"></i></div>
+            <h3>Como trabalhamos</h3>
+            <ul class="list-clean">
+              <li><i class="fa-solid fa-check"></i><span>Solicitações por canal oficial</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Organização por categoria de atendimento</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Prazos e prioridades definidos</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Escopo por plano + demandas avulsas sob orçamento</span></li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="plans-note reveal-up" style="margin-top:22px;">
+          <div class="plans-note-box">
+            <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+            <div>
+              <strong>Nosso posicionamento</strong>
+              <p>Mais do que “entregar guia e folha”, a proposta da Vital & Marques é organizar a rotina da empresa e reduzir risco operacional, fiscal e de comunicação.</p>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="notice" style="margin-top:16px;">
-        <b>Dica:</b> quando você me passar os itens reais do escritório, eu transformo em texto “jurídico/contratual” e em versão “marketing” pro site.
+    <section class="section-padding section-muted">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <h2>Por que isso importa para o cliente?</h2>
+          <p>Quando o processo é claro, o atendimento fica mais rápido, o dia a dia mais leve e a operação mais segura.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="case-card reveal-up">
+            <div class="case-icon"><i class="fa-solid fa-clock"></i></div>
+            <h3>Menos urgência desnecessária</h3>
+            <p>Pedidos entram do jeito certo e voltam com mais previsibilidade, evitando retrabalho e correria.</p>
+          </article>
+          <article class="case-card reveal-up" style="transition-delay:.08s">
+            <div class="case-icon"><i class="fa-solid fa-folder-tree"></i></div>
+            <h3>Mais organização</h3>
+            <p>Documentos, demandas e retornos passam a seguir uma lógica que facilita o acompanhamento.</p>
+          </article>
+          <article class="case-card reveal-up" style="transition-delay:.16s">
+            <div class="case-icon"><i class="fa-solid fa-shield"></i></div>
+            <h3>Mais segurança</h3>
+            <p>Com rotina e alinhamento, a empresa reduz risco e toma decisões com uma base mais confiável.</p>
+          </article>
+        </div>
       </div>
+    </section>
 
-      <div class="center" style="margin-top:18px;">
-        <a class="btn btn--whats" id="ctaSobreWhats" href="#" target="_blank" rel="noopener">Falar com a Vital & Marques</a>
+    <section class="final-cta">
+      <div class="container relative">
+        <h2>Quer entender se a Vital & Marques é o parceiro certo para a sua empresa?</h2>
+        <p>Fale com nosso time e veja como organizamos sua rotina contábil na prática.</p>
+        <a href="https://wa.me/556130253145?text=Ol%C3%A1%2C%20quero%20falar%20com%20a%20Vital%20e%20Marques." class="btn-cta btn-big" target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i> Falar com a equipe
+        </a>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <footer class="footer">
-    <div class="container footer__inner">
-      <div>© <span id="year"></span> Vital & Marques</div>
-      <div class="footer__links">
-        <a href="index.html#planos">Planos</a>
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-col">
+        <img src="../assets/img/logo-vital-marques-white.svg" alt="Vital & Marques" class="footer-logo" width="200" height="58">
+        <p>Assessoria contábil com foco em clareza, processo e segurança para empresas.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Navegação</h3>
+        <a href="../index.html">Início</a>
         <a href="servicos.html">Serviços</a>
+        <a href="planos.html">Planos</a>
         <a href="contato.html">Contato</a>
       </div>
+      <div class="footer-col">
+        <h3>Contato</h3>
+        <a href="https://wa.me/556130253145?text=Ol%C3%A1%2C%20quero%20falar%20com%20a%20Vital%20e%20Marques." target="_blank" rel="noopener">WhatsApp</a>
+        <a href="contato.html">Endereço e atendimento</a>
+      </div>
     </div>
+    <div class="copy">© <span id="year"></span> Vital & Marques Assessoria Contábil</div>
   </footer>
 
-  <a class="floatWhats" id="floatWhats" href="#" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">
-    <span class="floatWhats__pulse"></span>
-    <span class="floatWhats__icon">Whats</span>
+  <a class="whatsapp-float" href="https://wa.me/556130253145?text=Ol%C3%A1%2C%20quero%20falar%20com%20a%20Vital%20e%20Marques." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i><span class="float-text">Atendimento</span>
   </a>
 
-  <script src="/assets/js/script.js"></script>
+  <script src="../assets/js/script.js" defer></script>
 </body>
 </html>

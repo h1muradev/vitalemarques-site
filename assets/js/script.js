@@ -34,24 +34,21 @@
       isOpen ? closeMenu() : openMenu();
     });
 
-    // Fechar ao clicar em qualquer link do menu
     mobileMenu.querySelectorAll("a").forEach((a) => {
       a.addEventListener("click", closeMenu);
     });
 
-    // Fechar com ESC
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") closeMenu();
     });
 
-    // Fechar clicando fora (overlay simples)
     document.addEventListener("click", (e) => {
       const clickedInside = mobileMenu.contains(e.target) || mobileBtn.contains(e.target);
       if (!clickedInside) closeMenu();
     });
   }
 
-  // Reveal on scroll (IntersectionObserver = leve e rápido)
+  // Reveal on scroll
   const revealEls = document.querySelectorAll(".reveal-up, .reveal-left, .reveal-right");
   if ("IntersectionObserver" in window && revealEls.length) {
     const io = new IntersectionObserver(
@@ -68,7 +65,6 @@
 
     revealEls.forEach((el) => io.observe(el));
   } else {
-    // fallback (sem observer)
     revealEls.forEach((el) => el.classList.add("visible"));
   }
 })();

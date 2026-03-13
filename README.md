@@ -32,8 +32,8 @@ VITALEMARQUES-SITE/
 │
 ├── index.html
 └── README.md
-
-Páginas
+```
+## Páginas
 Home
 
 A página inicial apresenta a proposta da empresa, seus diferenciais, áreas de atuação, prévia dos planos, estrutura de atendimento e chamadas para contato.
@@ -54,7 +54,7 @@ Contato
 
 Página com informações de contato, localização, horário de atendimento e acesso rápido ao WhatsApp.
 
-Tecnologias utilizadas
+## Tecnologias utilizadas
 
 HTML5
 
@@ -66,7 +66,7 @@ Google Fonts
 
 Font Awesome
 
-Destaques do projeto
+## Destaques do projeto
 
 layout institucional e responsivo
 
@@ -84,11 +84,11 @@ integração com botão flutuante de WhatsApp
 
 acesso rápido ao Portal do Cliente e Portal do Funcionário
 
-Responsividade
+## Responsividade
 
 O site foi estruturado para oferecer uma navegação consistente em diferentes resoluções, com adaptação de layout para desktop, notebook, tablet e smartphone.
 
-Objetivo
+## Objetivo
 
 Este projeto foi desenvolvido para comunicar a identidade da Vital & Marques de forma mais forte no ambiente digital, reforçando atributos como:
 
@@ -108,6 +108,6 @@ Execução local
 
 Por se tratar de um site estático, basta abrir o arquivo index.html em um navegador para visualizar o projeto localmente.
 
-Desenvolvimento
+## Desenvolvimento
 
 Projeto desenvolvido para a Vital & Marques Assessoria Contábil, com foco em presença institucional, comunicação estratégica e experiência de navegação.

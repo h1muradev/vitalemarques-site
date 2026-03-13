@@ -4,54 +4,72 @@
   const mobileMenu = document.getElementById("mobile-menu");
   const year = document.getElementById("year");
 
-  // Ano no footer
-  if (year) year.textContent = new Date().getFullYear();
+  if (year) {
+    year.textContent = new Date().getFullYear();
+  }
 
-  // Header scrolled
-  const onScroll = () => {
+  const handleScroll = () => {
     if (!header) return;
-    header.classList.toggle("scrolled", window.scrollY > 10);
+    header.classList.toggle("scrolled", window.scrollY > 8);
   };
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
 
-  // Mobile menu toggle
+  window.addEventListener("scroll", handleScroll, { passive: true });
+  handleScroll();
+
   const closeMenu = () => {
     if (!mobileMenu || !mobileBtn) return;
     mobileMenu.classList.remove("active");
     mobileBtn.setAttribute("aria-expanded", "false");
+    document.body.classList.remove("menu-open");
   };
 
   const openMenu = () => {
     if (!mobileMenu || !mobileBtn) return;
     mobileMenu.classList.add("active");
     mobileBtn.setAttribute("aria-expanded", "true");
+    document.body.classList.add("menu-open");
   };
 
   if (mobileBtn && mobileMenu) {
     mobileBtn.addEventListener("click", () => {
       const isOpen = mobileMenu.classList.contains("active");
-      isOpen ? closeMenu() : openMenu();
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
     });
 
-    mobileMenu.querySelectorAll("a").forEach((a) => {
-      a.addEventListener("click", closeMenu);
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMenu);
     });
 
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeMenu();
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeMenu();
+      }
     });
 
-    document.addEventListener("click", (e) => {
-      const clickedInside = mobileMenu.contains(e.target) || mobileBtn.contains(e.target);
-      if (!clickedInside) closeMenu();
+    document.addEventListener("click", (event) => {
+      const clickedInsideMenu = mobileMenu.contains(event.target);
+      const clickedOnButton = mobileBtn.contains(event.target);
+
+      if (!clickedInsideMenu && !clickedOnButton) {
+        closeMenu();
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 960) {
+        closeMenu();
+      }
     });
   }
 
-  // Reveal on scroll
-  const revealEls = document.querySelectorAll(".reveal-up, .reveal-left, .reveal-right");
-  if ("IntersectionObserver" in window && revealEls.length) {
-    const io = new IntersectionObserver(
+  const revealItems = document.querySelectorAll(".reveal-up, .reveal-left, .reveal-right");
+
+  if ("IntersectionObserver" in window && revealItems.length) {
+    const observer = new IntersectionObserver(
       (entries, obs) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -63,8 +81,8 @@
       { threshold: 0.12 }
     );
 
-    revealEls.forEach((el) => io.observe(el));
+    revealItems.forEach((item) => observer.observe(item));
   } else {
-    revealEls.forEach((el) => el.classList.add("visible"));
+    revealItems.forEach((item) => item.classList.add("visible"));
   }
 })();

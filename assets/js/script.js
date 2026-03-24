@@ -7,15 +7,13 @@
 
   if (year) year.textContent = new Date().getFullYear();
 
-
-  const handleScroll = () => {
-    if (header) header.classList.toggle("scrolled", window.scrollY > 8);
-    if (heroBg) heroBg.style.transform = `translateY(${window.scrollY * 0.08}px)`;
-
+  const onScroll = () => {
+    if (header) header.classList.toggle("scrolled", window.scrollY > 10);
+    if (heroBg) heroBg.style.transform = `translateY(${window.scrollY * 0.07}px)`;
   };
 
-  window.addEventListener("scroll", handleScroll, { passive: true });
-  handleScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
 
   const closeMenu = () => {
     if (!mobileMenu || !mobileBtn) return;
@@ -24,29 +22,20 @@
     document.body.classList.remove("menu-open");
   };
 
-  const openMenu = () => {
-    if (!mobileMenu || !mobileBtn) return;
-    mobileMenu.classList.add("active");
-    mobileBtn.setAttribute("aria-expanded", "true");
-    document.body.classList.add("menu-open");
-  };
-
   if (mobileBtn && mobileMenu) {
     mobileBtn.addEventListener("click", () => {
-      mobileMenu.classList.contains("active") ? closeMenu() : openMenu();
+      const isOpen = mobileMenu.classList.contains("active");
+      if (isOpen) {
+        closeMenu();
+      } else {
+        mobileMenu.classList.add("active");
+        mobileBtn.setAttribute("aria-expanded", "true");
+        document.body.classList.add("menu-open");
+      }
     });
 
     mobileMenu.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
-
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") closeMenu();
-    });
-
-    document.addEventListener("click", (event) => {
-      const clickedInsideMenu = mobileMenu.contains(event.target);
-      const clickedOnButton = mobileBtn.contains(event.target);
-      if (!clickedInsideMenu && !clickedOnButton) closeMenu();
-    });
+    document.addEventListener("keydown", (event) => event.key === "Escape" && closeMenu());
 
     window.addEventListener("resize", () => {
       if (window.innerWidth > 960) closeMenu();
@@ -63,44 +52,24 @@
           obs.unobserve(entry.target);
         });
       },
-      { threshold: 0.12 }
+      { threshold: 0.14 }
     );
-
     revealItems.forEach((item) => observer.observe(item));
   } else {
     revealItems.forEach((item) => item.classList.add("visible"));
   }
 
-  const cards = document.querySelectorAll(".service-card, .process-card, .reason-card, .plan-preview-card");
-  cards.forEach((card) => {
-    card.addEventListener("mousemove", (event) => {
-      if (window.innerWidth <= 960) return;
-      const rect = card.getBoundingClientRect();
-      const rotateX = ((event.clientY - rect.top) / rect.height - 0.5) * -6;
-      const rotateY = ((event.clientX - rect.left) / rect.width - 0.5) * 6;
-      card.style.transform = `perspective(700px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
-    });
-
-    card.addEventListener("mouseleave", () => {
-      card.style.transform = "";
-    });
-  });
-
   const pageName = document.title.split("|")[0].trim();
-  const whatsappBase = "https://wa.me/556130253145";
-  const waLinks = document.querySelectorAll('a[href*="wa.me/"]');
-
-  const buildMessage = (topic, label) => encodeURIComponent(
-    `Olá, equipe Vital & Marques!\n\n` +
+  document.querySelectorAll('a[href*="wa.me/"]').forEach((link) => {
+    const topic = link.dataset.waTopic || "Assessoria Contábil";
+    const label = link.textContent.replace(/\s+/g, " ").trim() || "Atendimento";
+    const text = encodeURIComponent(
+      `Olá, equipe Vital & Marques!\n\n` +
       `Vim pelo site e quero falar sobre: ${topic}.\n` +
-      `Botão clicado: ${label}.\n` +
+      `CTA: ${label}.\n` +
       `Página: ${pageName}.\n\n` +
-      `Podem me enviar uma orientação inicial e próximos passos?`
-  );
-
-  waLinks.forEach((link) => {
-    const label = link.dataset.waTopic || link.textContent.replace(/\s+/g, " ").trim() || "Atendimento";
-    const topic = link.dataset.waTopic || "Assessoria contábil estratégica";
-    link.href = `${whatsappBase}?text=${buildMessage(topic, label)}`;
+      `Podemos iniciar com uma orientação para o meu cenário?`
+    );
+    link.href = `https://wa.me/556130253145?text=${text}`;
   });
 })();

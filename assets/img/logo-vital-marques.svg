@@ -1,26 +1,12 @@
-<svg width="220" height="64" viewBox="0 0 220 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">Logo Vital &amp; Marques</title>
-  <desc id="desc">Monograma M em azul com tipografia branca.</desc>
-  <rect x="2" y="2" width="60" height="60" rx="12" fill="#0A1931"/>
-  <path d="M14 49V15H24L32 30L40 15H50V49H41V28L32.5 44H31.5L23 28V49H14Z" fill="url(#gradM)"/>
-  <text x="72" y="29" fill="#FFFFFF" font-family="Poppins, Arial, sans-serif" font-size="16" font-weight="700">Vital &amp; Marques</text>
-  <text x="72" y="47" fill="#D9E6FA" font-family="Poppins, Arial, sans-serif" font-size="11" font-weight="500" letter-spacing="0.4">Assessoria Contábil</text>
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Monograma Vital e Marques</title>
+  <desc id="desc">Letra M estilizada em azul escuro.</desc>
+  <rect width="64" height="64" rx="12" fill="#0B1D39"/>
+  <path d="M12 52V12H24L32 29L40 12H52V52H43V24L33.2 44H30.8L21 24V52H12Z" fill="url(#grad)"/>
   <defs>
-    <linearGradient id="gradM" x1="14" y1="12" x2="51" y2="49" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#4F8CE1"/>
-      <stop offset="1" stop-color="#1F4E92"/>
-<svg width="220" height="64" viewBox="0 0 220 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle logoDesc">
-  <title id="logoTitle">Logo Vital &amp; Marques</title>
-  <desc id="logoDesc">Monograma VM com símbolo contábil em azul.</desc>
-  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#paint0_linear)"/>
-  <path d="M17 20L25 44H29L37 20H33L27 38L21 20H17Z" fill="white"/>
-  <path d="M40 44V20H45L51 31L57 20H62V44H57V29L51.5 38H50.5L45 29V44H40Z" fill="white"/>
-  <text x="76" y="29" fill="#0D2546" font-family="Poppins, Arial, sans-serif" font-size="16" font-weight="700">Vital &amp; Marques</text>
-  <text x="76" y="47" fill="#44648A" font-family="Poppins, Arial, sans-serif" font-size="11" font-weight="600" letter-spacing="0.5">ASSESSORIA CONTÁBIL</text>
-  <defs>
-    <linearGradient id="paint0_linear" x1="2" y1="2" x2="62" y2="62" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#0D2546"/>
-      <stop offset="1" stop-color="#2A5FA1"/>
+    <linearGradient id="grad" x1="12" y1="10" x2="52" y2="52" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5EA4FF"/>
+      <stop offset="1" stop-color="#214D8E"/>
     </linearGradient>
   </defs>
 </svg>

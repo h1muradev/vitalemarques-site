@@ -1,15 +1,15 @@
 :root{
-  --primary:#0d2546;
-  --primary-2:#163867;
-  --primary-3:#0a1b33;
-  --accent:#5ea4ff;
-  --accent-2:#8fc0ff;
+  --primary:#0f284d;
+  --primary-2:#163b6b;
+  --primary-3:#091a34;
+  --accent:#3f7fd1;
+  --accent-2:#7aa9e7;
   --success:#25d366;
   --success-hover:#1fb859;
   --text-dark:#0f172a;
   --text-gray:#5b6472;
   --white:#ffffff;
-  --bg-light:#f5f8fc;
+  --bg-light:#f1f5fb;
   --bg-soft:#edf3fb;
   --bg-card:#ffffff;
   --border:rgba(15,23,42,.08);
@@ -422,7 +422,7 @@ p{
   font-size:clamp(1.65rem, 2.7vw, 2.75rem);
   line-height:1.12;
   margin-bottom:18px;
-  max-width:12ch;
+  max-width:14ch;
 }
 
 .highlight{

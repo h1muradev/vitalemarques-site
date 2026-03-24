@@ -1,33 +1,37 @@
 // =========================================================
 // VITAL & MARQUES — INTERAÇÕES GLOBAIS
-// Este arquivo controla: header, menu mobile, reveal,
-// FAQ accordion, links de WhatsApp e parallax sutil.
+// Este arquivo controla: header ao scroll, menu mobile,
+// reveal on scroll, acordeão FAQ, links de WhatsApp
+// e parallax suave na hero.
 // =========================================================
 
-// -------- Referências principais do DOM --------
+// ===== Referências principais do DOM =====
 const header = document.getElementById('header');
 const mobileBtn = document.getElementById('mobile-btn');
 const mobileMenu = document.getElementById('mobile-menu');
 const yearEl = document.getElementById('year');
 
-// Atualiza automaticamente o ano no rodapé
-if (yearEl) yearEl.textContent = new Date().getFullYear();
+// =========================================================
+// Ano automático no rodapé
+// =========================================================
+if (yearEl) {
+  yearEl.textContent = new Date().getFullYear();
+}
 
-// -------------------------------------------------
-// Header dinâmico: reduz e ganha mais contraste no scroll
-// -------------------------------------------------
+// =========================================================
+// Header compacto ao rolar a página
+// =========================================================
 const setHeaderState = () => {
   if (!header) return;
-  header.classList.toggle('scrolled', window.scrollY > 14);
+  header.classList.toggle('scrolled', window.scrollY > 12);
 };
 
 setHeaderState();
 window.addEventListener('scroll', setHeaderState, { passive: true });
 
-// -------------------------------------------------
-// Menu mobile: abre/fecha, atualiza aria-expanded
-// e bloqueia o scroll do body enquanto aberto
-// -------------------------------------------------
+// =========================================================
+// Menu mobile: abre/fecha e trava o scroll do body
+// =========================================================
 if (mobileBtn && mobileMenu) {
   mobileBtn.addEventListener('click', () => {
     const isOpen = mobileMenu.classList.toggle('active');
@@ -44,13 +48,15 @@ if (mobileBtn && mobileMenu) {
   });
 }
 
-// -------------------------------------------------
-// Reveal on scroll com stagger automático
-// Dica: adicione classe .reveal em qualquer bloco novo
-// -------------------------------------------------
+// =========================================================
+// Reveal on scroll
+// Dica para futura edição: qualquer bloco com .reveal
+// passa a animar automaticamente na entrada da viewport.
+// =========================================================
 const revealItems = document.querySelectorAll('.reveal');
+
 revealItems.forEach((item, index) => {
-  item.style.setProperty('--delay', `${Math.min(index * 32, 280)}ms`);
+  item.style.setProperty('--delay', `${Math.min(index * 28, 300)}ms`);
 });
 
 if ('IntersectionObserver' in window && revealItems.length) {
@@ -63,7 +69,7 @@ if ('IntersectionObserver' in window && revealItems.length) {
       });
     },
     {
-      threshold: 0.16,
+      threshold: 0.18,
       rootMargin: '0px 0px -8% 0px',
     }
   );
@@ -73,67 +79,58 @@ if ('IntersectionObserver' in window && revealItems.length) {
   revealItems.forEach((item) => item.classList.add('show'));
 }
 
-// -------------------------------------------------
-// FAQ Accordion: abre/fecha com ícone + / -
-// -------------------------------------------------
+// =========================================================
+// FAQ Accordion com transição suave
+// =========================================================
 const faqButtons = document.querySelectorAll('.faq-q');
-
-// Ajusta estado inicial dos itens já abertos no HTML
-faqButtons.forEach((button) => {
-  const item = button.closest('.faq-item');
-  if (!item?.classList.contains('open')) return;
-  const icon = button.querySelector('i');
-  if (icon) {
-    icon.classList.remove('fa-plus');
-    icon.classList.add('fa-minus');
-  }
-  button.setAttribute('aria-expanded', 'true');
-});
 
 faqButtons.forEach((button) => {
   button.addEventListener('click', () => {
-    const item = button.closest('.faq-item');
-    if (!item) return;
-
-    const wasOpen = item.classList.contains('open');
-    item.classList.toggle('open');
-    button.setAttribute('aria-expanded', String(!wasOpen));
+    const faqItem = button.closest('.faq-item');
+    if (!faqItem) return;
 
     const icon = button.querySelector('i');
+    const isOpen = faqItem.classList.toggle('open');
+
+    button.setAttribute('aria-expanded', String(isOpen));
+
     if (icon) {
-      icon.classList.toggle('fa-plus', wasOpen);
-      icon.classList.toggle('fa-minus', !wasOpen);
+      icon.classList.toggle('fa-plus', !isOpen);
+      icon.classList.toggle('fa-minus', isOpen);
     }
   });
 });
 
-// -------------------------------------------------
-// Links de WhatsApp: injeta texto padrão com assunto
-// Edite data-wa-topic no HTML para mudar a mensagem
-// -------------------------------------------------
+// =========================================================
+// Links de WhatsApp com mensagem contextual
+// Altere data-wa-topic no HTML para customizar cada CTA.
+// =========================================================
 const waLinks = document.querySelectorAll('[data-wa-topic]');
+
 waLinks.forEach((link) => {
   link.addEventListener('click', () => {
     const topic = link.dataset.waTopic;
     if (!topic) return;
 
-    const base = 'Olá! Vim pelo site da Vital & Marques e quero falar sobre: ';
-    link.href = `https://wa.me/556130253145?text=${encodeURIComponent(base + topic)}`;
+    const message = `Olá! Vim pelo site da Vital & Marques e quero falar sobre: ${topic}`;
+    link.href = `https://wa.me/556130253145?text=${encodeURIComponent(message)}`;
   });
 });
 
-// -------------------------------------------------
-// Parallax sutil para áreas estratégicas (hero)
-// Use data-parallax no HTML onde quiser aplicar
-// -------------------------------------------------
+// =========================================================
+// Parallax leve para elementos estratégicos da hero
+// Use data-parallax para aplicar.
+// =========================================================
 const parallaxItems = document.querySelectorAll('[data-parallax]');
+
 if (parallaxItems.length) {
   const updateParallax = () => {
     const y = window.scrollY;
-    parallaxItems.forEach((el, idx) => {
-      const speed = 0.03 + idx * 0.012;
-      const offset = Math.max(-22, y * speed * -0.22);
-      el.style.setProperty('--parallax-offset', `${offset}px`);
+
+    parallaxItems.forEach((item, index) => {
+      const speed = 0.02 + (index * 0.01);
+      const offset = Math.max(-24, y * speed * -0.25);
+      item.style.setProperty('--parallax-offset', `${offset}px`);
     });
   };
 

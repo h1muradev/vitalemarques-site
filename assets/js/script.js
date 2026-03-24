@@ -81,8 +81,8 @@ if ('IntersectionObserver' in window && revealItems.length) {
 
 // =========================================================
 // FAQ Accordion com transição suave
-// Interação reutilizada na página de planos para expandir
-// respostas de contratação sem recarregar a página.
+// Interação reutilizada na página de contato e de planos para expandir
+// respostas sem recarregar a página.
 // =========================================================
 const faqButtons = document.querySelectorAll('.faq-q');
 

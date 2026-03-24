@@ -826,6 +826,204 @@ footer { padding: 56px 0 24px; background: #040a14; }
 }
 
 /* =========================================================
+   ESTILOS ESPECÍFICOS — PÁGINA SOBRE
+   Escopo isolado em .page-sobre para não impactar outras páginas.
+   ========================================================= */
+.page-sobre {
+  background: #050b17;
+}
+
+.page-sobre .sobre-hero {
+  min-height: auto;
+  padding-bottom: 110px;
+  background:
+    radial-gradient(circle at 85% 10%, rgba(215, 178, 119, 0.2), transparent 38%),
+    radial-gradient(circle at 8% 24%, rgba(76, 116, 187, 0.24), transparent 32%),
+    linear-gradient(170deg, #0a1730 0%, #091427 46%, #050b17 100%);
+}
+
+.page-sobre .sobre-hero-panel {
+  background: linear-gradient(145deg, rgba(22, 44, 78, 0.95), rgba(6, 15, 31, 0.98));
+}
+
+.page-sobre .sobre-hero-note {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(184, 201, 228, 0.24);
+  color: #dce6fa;
+  font-size: .88rem;
+}
+
+.page-sobre .sobre-quem-somos {
+  background: linear-gradient(180deg, #f4f7fc 0%, #ffffff 100%);
+}
+
+.page-sobre .sobre-story {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 26px;
+  align-items: start;
+}
+
+.page-sobre .sobre-copy {
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(20, 39, 70, 0.14);
+  background: linear-gradient(165deg, #ffffff, #f4f8ff);
+  box-shadow: 0 18px 34px rgba(13, 33, 60, 0.12);
+  padding: 26px;
+  display: grid;
+  gap: 14px;
+}
+
+.page-sobre .sobre-copy p {
+  color: var(--ink-800);
+}
+
+.page-sobre .sobre-filosofia {
+  background: linear-gradient(180deg, #08142b, #061021);
+}
+
+.page-sobre .sobre-filosofia-grid .premium-card {
+  min-height: 206px;
+  background: linear-gradient(155deg, rgba(12, 27, 52, 0.98), rgba(5, 11, 22, 0.98));
+}
+
+.page-sobre .sobre-como-trabalhamos {
+  background: linear-gradient(180deg, #eaf0fa, #f8fbff);
+}
+
+.page-sobre .sobre-processo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.page-sobre .sobre-processo-item {
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(20, 39, 70, 0.16);
+  background: linear-gradient(165deg, #ffffff, #f3f8ff);
+  box-shadow: 0 14px 30px rgba(9, 25, 49, 0.1);
+  padding: 24px;
+  color: var(--ink-950);
+}
+
+.page-sobre .sobre-processo-item span {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  background: linear-gradient(120deg, #f3dfbc, #dbb77d);
+  color: #051024;
+  font-size: .84rem;
+  font-weight: 800;
+}
+
+.page-sobre .sobre-processo-item h3 {
+  margin-bottom: 8px;
+}
+
+.page-sobre .sobre-processo-item p {
+  color: var(--ink-600);
+}
+
+.page-sobre .sobre-valor-percebido {
+  background: linear-gradient(180deg, #102343, #08142a);
+}
+
+.page-sobre .sobre-compromisso {
+  background: linear-gradient(180deg, #f9fbff, #eef4ff);
+}
+
+.page-sobre .sobre-manifesto {
+  border-radius: 28px;
+  border: 1px solid rgba(166, 125, 66, 0.32);
+  background:
+    radial-gradient(circle at 90% 12%, rgba(215, 178, 119, 0.18), transparent 40%),
+    linear-gradient(150deg, #ffffff, #f2f7ff);
+  box-shadow: 0 22px 44px rgba(10, 28, 53, 0.14);
+  padding: clamp(28px, 4vw, 52px);
+  color: var(--ink-950);
+}
+
+.page-sobre .sobre-manifesto h2 {
+  margin: 14px 0 14px;
+  max-width: 18ch;
+}
+
+.page-sobre .sobre-manifesto p {
+  color: var(--ink-800);
+  max-width: 80ch;
+}
+
+.page-sobre .sobre-manifesto p + p {
+  margin-top: 12px;
+}
+
+.page-sobre .sobre-ideal {
+  background: linear-gradient(180deg, #08142b, #050d1c);
+}
+
+.page-sobre .sobre-ideal-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.page-sobre .sobre-ideal-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  border-radius: 14px;
+  border: 1px solid rgba(184, 201, 228, 0.28);
+  background: rgba(8, 17, 34, 0.64);
+  color: #e5edfc;
+  padding: 14px;
+}
+
+.page-sobre .sobre-ideal-list i {
+  color: var(--gold-300);
+  margin-top: 3px;
+}
+
+.page-sobre .sobre-faq {
+  background: linear-gradient(180deg, #091428, #060f1f);
+}
+
+/* Accordion da página Sobre: reforça contraste e leitura no FAQ institucional */
+.page-sobre .sobre-faq .faq-item {
+  background: rgba(8, 17, 34, 0.82);
+}
+
+.page-sobre .sobre-faq .faq-item.open {
+  background: linear-gradient(160deg, rgba(14, 31, 58, 0.95), rgba(6, 13, 26, 0.95));
+}
+
+.page-sobre .sobre-cta-final {
+  padding-top: 104px;
+  background:
+    radial-gradient(circle at 14% 8%, rgba(215, 178, 119, 0.24), transparent 34%),
+    linear-gradient(165deg, #0b1a35, #050a15);
+}
+
+.page-sobre .sobre-cta-final .final-cta-box {
+  border-color: rgba(215, 178, 119, 0.72);
+  background:
+    radial-gradient(circle at 85% -10%, rgba(215, 178, 119, 0.42), transparent 40%),
+    linear-gradient(150deg, rgba(14, 32, 60, 0.95), rgba(5, 11, 22, 0.98));
+}
+
+@media (max-width: 1120px) {
+  .page-sobre .sobre-story,
+  .page-sobre .sobre-processo-grid,
+  .page-sobre .sobre-ideal-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
    ESTILOS ESPECÍFICOS — PÁGINA DE SERVIÇOS
    Escopo isolado em .page-servicos para não impactar a home.
    ========================================================= */

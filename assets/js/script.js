@@ -3,14 +3,15 @@
   const mobileBtn = document.getElementById("mobile-btn");
   const mobileMenu = document.getElementById("mobile-menu");
   const year = document.getElementById("year");
+  const heroBg = document.querySelector(".hero-bg, .page-hero-bg");
 
-  if (year) {
-    year.textContent = new Date().getFullYear();
-  }
+  if (year) year.textContent = new Date().getFullYear();
+
 
   const handleScroll = () => {
-    if (!header) return;
-    header.classList.toggle("scrolled", window.scrollY > 8);
+    if (header) header.classList.toggle("scrolled", window.scrollY > 8);
+    if (heroBg) heroBg.style.transform = `translateY(${window.scrollY * 0.08}px)`;
+
   };
 
   window.addEventListener("scroll", handleScroll, { passive: true });
@@ -32,50 +33,34 @@
 
   if (mobileBtn && mobileMenu) {
     mobileBtn.addEventListener("click", () => {
-      const isOpen = mobileMenu.classList.contains("active");
-      if (isOpen) {
-        closeMenu();
-      } else {
-        openMenu();
-      }
+      mobileMenu.classList.contains("active") ? closeMenu() : openMenu();
     });
 
-    mobileMenu.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", closeMenu);
-    });
+    mobileMenu.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
 
     document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") {
-        closeMenu();
-      }
+      if (event.key === "Escape") closeMenu();
     });
 
     document.addEventListener("click", (event) => {
       const clickedInsideMenu = mobileMenu.contains(event.target);
       const clickedOnButton = mobileBtn.contains(event.target);
-
-      if (!clickedInsideMenu && !clickedOnButton) {
-        closeMenu();
-      }
+      if (!clickedInsideMenu && !clickedOnButton) closeMenu();
     });
 
     window.addEventListener("resize", () => {
-      if (window.innerWidth > 960) {
-        closeMenu();
-      }
+      if (window.innerWidth > 960) closeMenu();
     });
   }
 
   const revealItems = document.querySelectorAll(".reveal-up, .reveal-left, .reveal-right");
-
   if ("IntersectionObserver" in window && revealItems.length) {
     const observer = new IntersectionObserver(
       (entries, obs) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            obs.unobserve(entry.target);
-          }
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("visible");
+          obs.unobserve(entry.target);
         });
       },
       { threshold: 0.12 }
@@ -85,4 +70,37 @@
   } else {
     revealItems.forEach((item) => item.classList.add("visible"));
   }
+
+  const cards = document.querySelectorAll(".service-card, .process-card, .reason-card, .plan-preview-card");
+  cards.forEach((card) => {
+    card.addEventListener("mousemove", (event) => {
+      if (window.innerWidth <= 960) return;
+      const rect = card.getBoundingClientRect();
+      const rotateX = ((event.clientY - rect.top) / rect.height - 0.5) * -6;
+      const rotateY = ((event.clientX - rect.left) / rect.width - 0.5) * 6;
+      card.style.transform = `perspective(700px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+    });
+
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "";
+    });
+  });
+
+  const pageName = document.title.split("|")[0].trim();
+  const whatsappBase = "https://wa.me/556130253145";
+  const waLinks = document.querySelectorAll('a[href*="wa.me/"]');
+
+  const buildMessage = (topic, label) => encodeURIComponent(
+    `Olá, equipe Vital & Marques!\n\n` +
+      `Vim pelo site e quero falar sobre: ${topic}.\n` +
+      `Botão clicado: ${label}.\n` +
+      `Página: ${pageName}.\n\n` +
+      `Podem me enviar uma orientação inicial e próximos passos?`
+  );
+
+  waLinks.forEach((link) => {
+    const label = link.dataset.waTopic || link.textContent.replace(/\s+/g, " ").trim() || "Atendimento";
+    const topic = link.dataset.waTopic || "Assessoria contábil estratégica";
+    link.href = `${whatsappBase}?text=${buildMessage(topic, label)}`;
+  });
 })();

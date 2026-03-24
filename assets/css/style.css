@@ -981,3 +981,208 @@ footer { padding: 56px 0 24px; background: #040a14; }
     min-height: auto;
   }
 }
+
+/* =========================================================
+   ESTILOS ESPECÍFICOS — PÁGINA DE PLANOS
+   Escopo isolado em .page-planos para não impactar outras páginas.
+   ========================================================= */
+.page-planos {
+  background: #050b17;
+}
+
+.page-planos .planos-hero {
+  background:
+    radial-gradient(circle at 90% 8%, rgba(215,178,119,.18), transparent 34%),
+    radial-gradient(circle at 6% 20%, rgba(76,116,187,.22), transparent 30%),
+    linear-gradient(170deg, #08172f 0%, #071327 48%, #050b17 100%);
+}
+
+.page-planos .planos-hero-panel {
+  background: linear-gradient(145deg, rgba(21,42,75,.95), rgba(7,16,31,.98));
+}
+
+.page-planos .planos-btn-secundario {
+  background: rgba(255,255,255,.08);
+  border-color: rgba(184, 201, 228, 0.42);
+}
+
+.page-planos .planos-trust-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.page-planos .planos-trust-row li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: .84rem;
+  color: #e4edff;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(184, 201, 228, 0.28);
+  background: rgba(6, 15, 30, 0.62);
+}
+
+.page-planos .planos-trust-row i {
+  color: var(--gold-300);
+  margin-top: 3px;
+}
+
+.page-planos .planos-band {
+  background: linear-gradient(120deg, rgba(215,178,119,.16), rgba(42,79,140,.25));
+}
+
+.page-planos .planos-overview-section {
+  background: linear-gradient(180deg, #f4f7fd 0%, #ffffff 100%);
+  color: var(--ink-950);
+}
+
+.page-planos .planos-overview-section .section-header p,
+.page-planos .planos-overview-section .section-header h2 {
+  color: var(--ink-950);
+}
+
+.page-planos .planos-grid-principal {
+  gap: 22px;
+}
+
+.page-planos .planos-card {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+  border: 1px solid rgba(20, 39, 70, 0.18);
+  background: linear-gradient(170deg, #ffffff 0%, #f2f6fd 100%);
+}
+
+.page-planos .planos-card .btn-whatsapp {
+  margin-top: 8px;
+}
+
+.page-planos .planos-card.featured {
+  border-color: rgba(166, 125, 66, 0.6);
+  background: linear-gradient(170deg, #fff8eb 0%, #fcefd6 100%);
+  box-shadow: 0 26px 44px rgba(154, 113, 54, 0.22);
+}
+
+.page-planos .plan-summary {
+  color: var(--ink-800);
+  font-size: .9rem;
+}
+
+.page-planos .plan-block {
+  border-radius: 12px;
+  border: 1px solid rgba(20, 39, 70, 0.14);
+  background: rgba(255,255,255,.75);
+  padding: 12px;
+}
+
+.page-planos .plan-block h4 {
+  margin-bottom: 8px;
+  color: var(--ink-950);
+}
+
+.page-planos .plan-fit {
+  color: var(--ink-800);
+  font-size: .88rem;
+}
+
+.page-planos .plan-note {
+  color: var(--ink-600);
+  font-size: .82rem;
+}
+
+.page-planos .planos-evolution {
+  background: linear-gradient(180deg, #0b1b35 0%, #091429 100%);
+}
+
+.page-planos .planos-evolution-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.page-planos .planos-evolution .plan-extra-card {
+  background: linear-gradient(150deg, rgba(12, 28, 55, 0.95), rgba(7, 15, 29, 0.95));
+}
+
+.page-planos .planos-compare-section {
+  background: linear-gradient(180deg, #eef3fb 0%, #e6eef9 100%);
+  color: var(--ink-950);
+}
+
+.page-planos .planos-compare-section .section-header h2 {
+  color: var(--ink-950);
+}
+
+.page-planos .compare-wrap {
+  overflow-x: auto;
+  border: 1px solid rgba(20, 39, 70, 0.2);
+  background: #ffffff;
+  box-shadow: 0 18px 40px rgba(10, 28, 52, 0.16);
+}
+
+.page-planos .compare-table th,
+.page-planos .compare-table td {
+  border-bottom-color: rgba(16, 37, 68, 0.14);
+}
+
+.page-planos .compare-table td {
+  color: var(--ink-800);
+}
+
+.page-planos .compare-table td:first-child {
+  color: var(--ink-950);
+}
+
+.page-planos .compare-table tbody tr:nth-child(even) {
+  background: rgba(239, 244, 252, 0.7);
+}
+
+.page-planos .compare-table .recommended-col {
+  background: linear-gradient(180deg, rgba(215,178,119,.16), rgba(215,178,119,.1));
+  font-weight: 800;
+  color: #5d4524;
+}
+
+.page-planos .planos-value-section {
+  background: linear-gradient(180deg, #fdfefe 0%, #f3f7fd 100%);
+}
+
+.page-planos .planos-value-grid .feature-card {
+  min-height: 210px;
+}
+
+.page-planos .planos-guide-section {
+  background: linear-gradient(180deg, #09152b 0%, #081122 100%);
+}
+
+.page-planos .planos-guide-grid .premium-card {
+  min-height: 206px;
+}
+
+.page-planos .planos-faq-section {
+  background: linear-gradient(180deg, #13284a 0%, #0a1730 100%);
+}
+
+.page-planos .planos-final-cta-section {
+  background: linear-gradient(180deg, #f2f6fd 0%, #e8effa 100%);
+}
+
+.page-planos .planos-final-cta-box {
+  border: 1px solid rgba(166, 125, 66, 0.56);
+  background:
+    radial-gradient(circle at 15% 10%, rgba(215,178,119,.34), transparent 34%),
+    linear-gradient(145deg, #0f2447 0%, #08152c 65%, #060d1c 100%);
+}
+
+.page-planos .planos-final-cta-box .kicker {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 1120px) {
+  .page-planos .planos-evolution-grid,
+  .page-planos .planos-value-grid,
+  .page-planos .planos-guide-grid,
+  .page-planos .planos-trust-row {
+    grid-template-columns: 1fr;
+  }
+}

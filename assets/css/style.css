@@ -825,6 +825,90 @@ footer { padding: 56px 0 24px; background: #040a14; }
   .final-cta-box { padding: 34px 20px; }
 }
 
+
+/* =========================================================
+   TOPO COMPACTO — PÁGINAS INTERNAS
+   Estrutura editorial para reduzir altura e evitar repetição de hero.
+   ========================================================= */
+.internal-top {
+  position: relative;
+  padding: 138px 0 52px;
+  overflow: hidden;
+}
+
+.internal-top::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 86% 18%, rgba(215, 178, 119, 0.16), transparent 38%),
+    radial-gradient(circle at 12% 8%, rgba(86, 125, 191, 0.24), transparent 36%);
+  pointer-events: none;
+}
+
+.internal-top-shell {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  display: grid;
+  gap: 14px;
+}
+
+.internal-top-shell h1 {
+  font-size: clamp(2rem, 3.5vw, 3.25rem);
+  max-width: 20ch;
+}
+
+.internal-top-shell p {
+  color: var(--ink-200);
+  max-width: 74ch;
+}
+
+.internal-top-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+/* Variações por página para preservar identidade sem clonar layout */
+.page-servicos .internal-top-servicos {
+  background: linear-gradient(170deg, #0b1a35 0%, #091326 55%, #060d1c 100%);
+}
+
+.page-planos .internal-top-planos {
+  background:
+    radial-gradient(circle at 90% 10%, rgba(215, 178, 119, 0.2), transparent 34%),
+    linear-gradient(170deg, #08172f 0%, #071226 52%, #050b17 100%);
+}
+
+.page-sobre .internal-top-sobre {
+  background:
+    radial-gradient(circle at 84% 14%, rgba(215, 178, 119, 0.18), transparent 36%),
+    linear-gradient(170deg, #0a1730 0%, #091428 54%, #050b17 100%);
+}
+
+.page-contato .internal-top-contato {
+  background:
+    radial-gradient(circle at 86% 10%, rgba(37, 211, 102, 0.12), transparent 34%),
+    radial-gradient(circle at 10% 16%, rgba(84, 122, 189, 0.22), transparent 32%),
+    linear-gradient(170deg, #0b1a35 0%, #081326 50%, #060d1d 100%);
+}
+
+.page-contato .contato-cafe-cta {
+  margin-top: 18px;
+}
+
+@media (max-width: 760px) {
+  .internal-top {
+    padding: 120px 0 44px;
+  }
+
+  .internal-top-cta {
+    flex-direction: column;
+  }
+}
+
 /* =========================================================
    ESTILOS ESPECÍFICOS — PÁGINA SOBRE
    Escopo isolado em .page-sobre para não impactar outras páginas.

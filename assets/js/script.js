@@ -3,14 +3,20 @@
   const mobileBtn = document.getElementById("mobile-btn");
   const mobileMenu = document.getElementById("mobile-menu");
   const year = document.getElementById("year");
+  const heroBg = document.querySelector(".hero-bg, .page-hero-bg");
 
   if (year) {
     year.textContent = new Date().getFullYear();
   }
 
   const handleScroll = () => {
-    if (!header) return;
-    header.classList.toggle("scrolled", window.scrollY > 8);
+    if (header) {
+      header.classList.toggle("scrolled", window.scrollY > 8);
+    }
+
+    if (heroBg) {
+      heroBg.style.transform = `translateY(${window.scrollY * 0.12}px)`;
+    }
   };
 
   window.addEventListener("scroll", handleScroll, { passive: true });
@@ -85,4 +91,21 @@
   } else {
     revealItems.forEach((item) => item.classList.add("visible"));
   }
+
+  const cards = document.querySelectorAll(".service-card, .process-card, .reason-card, .plan-preview-card");
+  cards.forEach((card) => {
+    card.addEventListener("mousemove", (event) => {
+      if (window.innerWidth <= 960) return;
+      const rect = card.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+      const rotateX = ((y / rect.height) - 0.5) * -6;
+      const rotateY = ((x / rect.width) - 0.5) * 6;
+      card.style.transform = `perspective(700px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+    });
+
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "";
+    });
+  });
 })();

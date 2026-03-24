@@ -11,7 +11,7 @@ const setHeaderState = () => {
 };
 
 setHeaderState();
-window.addEventListener('scroll', setHeaderState);
+window.addEventListener('scroll', setHeaderState, { passive: true });
 
 if (mobileBtn && mobileMenu) {
   mobileBtn.addEventListener('click', () => {
@@ -30,6 +30,10 @@ if (mobileBtn && mobileMenu) {
 }
 
 const revealItems = document.querySelectorAll('.reveal');
+revealItems.forEach((item, index) => {
+  item.style.setProperty('--delay', `${Math.min(index * 35, 280)}ms`);
+});
+
 if ('IntersectionObserver' in window && revealItems.length) {
   const observer = new IntersectionObserver(
     (entries) => {
@@ -40,7 +44,7 @@ if ('IntersectionObserver' in window && revealItems.length) {
         }
       });
     },
-    { threshold: 0.15 }
+    { threshold: 0.15, rootMargin: '0px 0px -8% 0px' }
   );
 
   revealItems.forEach((item) => observer.observe(item));
@@ -49,12 +53,33 @@ if ('IntersectionObserver' in window && revealItems.length) {
 }
 
 const faqButtons = document.querySelectorAll('.faq-q');
+
+faqButtons.forEach((button) => {
+  const item = button.closest('.faq-item');
+  if (item?.classList.contains('open')) {
+    const icon = button.querySelector('i');
+    if (icon) {
+      icon.classList.remove('fa-plus');
+      icon.classList.add('fa-minus');
+    }
+    button.setAttribute('aria-expanded', 'true');
+  }
+});
+
 faqButtons.forEach((button) => {
   button.addEventListener('click', () => {
     const item = button.closest('.faq-item');
     if (!item) return;
-    const expanded = item.classList.toggle('open');
-    button.setAttribute('aria-expanded', String(expanded));
+
+    const isOpen = item.classList.contains('open');
+    item.classList.toggle('open');
+    button.setAttribute('aria-expanded', String(!isOpen));
+
+    const icon = button.querySelector('i');
+    if (icon) {
+      icon.classList.toggle('fa-plus', isOpen);
+      icon.classList.toggle('fa-minus', !isOpen);
+    }
   });
 });
 
@@ -67,3 +92,17 @@ waLinks.forEach((link) => {
     link.href = `https://wa.me/556130253145?text=${encodeURIComponent(base + topic)}`;
   });
 });
+
+const parallaxItems = document.querySelectorAll('[data-parallax]');
+if (parallaxItems.length) {
+  const updateParallax = () => {
+    const y = window.scrollY;
+    parallaxItems.forEach((el, idx) => {
+      const speed = 0.03 + idx * 0.01;
+      el.style.setProperty('--parallax-offset', `${Math.max(-18, y * speed * -0.2)}px`);
+    });
+  };
+
+  updateParallax();
+  window.addEventListener('scroll', updateParallax, { passive: true });
+}

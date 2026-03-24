@@ -82,11 +82,11 @@ p{
 }
 
 .section-light{
-  background:linear-gradient(180deg, #f8fbff 0%, #eef4fb 100%);
+  background:linear-gradient(180deg, #f7fbff 0%, #edf3fb 55%, #f5efff 100%);
 }
 
 .section-soft-blue{
-  background:linear-gradient(180deg, #f4f8fe 0%, #eaf1fa 100%);
+  background:linear-gradient(180deg, #eef5ff 0%, #e6eefb 60%, #eef1ff 100%);
 }
 
 .text-center{
@@ -117,10 +117,10 @@ p{
 }
 
 .header-content{
-  position:relative;
-  display:flex;
+  display:grid;
+  grid-template-columns:auto 1fr auto auto;
   align-items:center;
-  gap:18px;
+  gap:14px;
 }
 
 .brand{
@@ -181,21 +181,14 @@ p{
 }
 
 .header-right{
-  margin-left:auto;
-  display:flex;
-  align-items:center;
-  gap:14px;
-  flex:1;
+  display:contents;
 }
 
 .desktop-nav{
-  position:absolute;
-  left:50%;
-  transform:translateX(-50%);
+  justify-self:center;
   display:flex;
   align-items:center;
   gap:8px;
-  margin:0 auto;
 }
 
 .desktop-nav a{
@@ -218,7 +211,7 @@ p{
 }
 
 .header-actions{
-  margin-left:auto;
+  justify-self:end;
   display:flex;
   align-items:center;
   gap:12px;
@@ -249,6 +242,7 @@ p{
 }
 
 .mobile-menu-icon{
+  justify-self:end;
   display:none;
   width:46px;
   height:46px;
@@ -425,7 +419,7 @@ p{
 
 .hero-text h1{
   color:var(--white);
-  font-size:clamp(2rem, 3.5vw, 3.3rem);
+  font-size:clamp(1.65rem, 2.7vw, 2.75rem);
   line-height:1.12;
   margin-bottom:18px;
   max-width:14ch;
@@ -698,16 +692,6 @@ p{
   height:8px;
   border-radius:99px;
   background:var(--accent);
-}
-
-.scroll-progress{
-  position:fixed;
-  top:0;
-  left:0;
-  width:0;
-  height:4px;
-  z-index:1300;
-  background:linear-gradient(90deg, #5ea4ff, #25d366);
 }
 
 .page-hero-card{
@@ -1503,7 +1487,7 @@ footer{
   }
 
   .hero-text h1{
-    font-size:clamp(2rem, 10vw, 3rem);
+    font-size:clamp(1.75rem, 8vw, 2.45rem);
   }
 
   .page-hero-text h1{

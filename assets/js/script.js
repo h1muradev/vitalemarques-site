@@ -7,17 +7,11 @@
 
   if (year) year.textContent = new Date().getFullYear();
 
-  const progress = document.createElement("div");
-  progress.className = "scroll-progress";
-  document.body.appendChild(progress);
 
   const handleScroll = () => {
     if (header) header.classList.toggle("scrolled", window.scrollY > 8);
     if (heroBg) heroBg.style.transform = `translateY(${window.scrollY * 0.08}px)`;
 
-    const total = document.documentElement.scrollHeight - window.innerHeight;
-    const value = total > 0 ? (window.scrollY / total) * 100 : 0;
-    progress.style.width = `${Math.min(value, 100)}%`;
   };
 
   window.addEventListener("scroll", handleScroll, { passive: true });

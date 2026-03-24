@@ -3,24 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vital & Marques | Assessoria Contábil Estratégica</title>
-  <meta name="description" content="Assessoria contábil premium para empresas que querem crescer com segurança fiscal, organização operacional e visão estratégica." />
-  <meta name="theme-color" content="#07152e" />
+  <title>Vital & Marques Assessoria Contábil | Contabilidade premium com visão estratégica</title>
+  <meta name="description" content="A Vital & Marques entrega contabilidade consultiva com rotina organizada, previsibilidade e atendimento premium para empresas que querem crescer com segurança." />
+  <meta name="theme-color" content="#071228" />
 
+  <!-- Fonte principal da interface -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
+  <!-- =======================================================
+       HEADER — marca, navegação, portais e menu mobile
+       ======================================================= -->
   <header id="header" class="site-header">
     <div class="container header-content">
-      <a href="index.html" class="brand" aria-label="Vital & Marques - Página inicial">
-        <img src="assets/img/logo-vital-marques.svg" class="brand-logo" alt="Logo Vital & Marques" />
+      <a href="index.html" class="brand" aria-label="Página inicial da Vital & Marques">
+        <img src="assets/img/logo-vital-marques.svg" class="brand-logo" alt="Logo da Vital & Marques" />
         <span class="brand-text"><strong>Vital & Marques</strong><small>Assessoria Contábil</small></span>
       </a>
 
+      <!-- Menu principal desktop -->
       <nav class="desktop-nav" aria-label="Navegação principal">
         <a href="index.html" class="is-active">Início</a>
         <a href="pages/servicos.html">Serviços</a>
@@ -29,15 +34,20 @@
         <a href="pages/contato.html">Contato</a>
       </nav>
 
+      <!-- CTAs fixos de acesso aos portais (desktop) -->
       <div class="header-actions">
-        <a class="btn-portal" href="https://SEU-LINK-PORTAL-CLIENTE" target="_blank" rel="noopener"><i class="fa-solid fa-circle-user"></i><span>Portal do Cliente</span></a>
-        <a class="btn-portal" href="https://SEU-LINK-PORTAL-FUNCIONARIO" target="_blank" rel="noopener"><i class="fa-solid fa-user-gear"></i><span>Portal do Funcionário</span></a>
+        <a class="btn-portal" href="https://SEU-LINK-PORTAL-CLIENTE" target="_blank" rel="noopener"><i class="fa-solid fa-circle-user"></i> Portal do Cliente</a>
+        <a class="btn-portal" href="https://SEU-LINK-PORTAL-FUNCIONARIO" target="_blank" rel="noopener"><i class="fa-solid fa-user-gear"></i> Portal do Funcionário</a>
       </div>
 
-      <button class="mobile-menu-icon" id="mobile-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu"><i class="fa-solid fa-bars"></i></button>
+      <!-- Botão hambúrguer (mobile) -->
+      <button id="mobile-btn" class="mobile-menu-icon" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
     </div>
 
-    <nav class="mobile-nav" id="mobile-menu" aria-label="Menu mobile">
+    <!-- Menu lateral mobile -->
+    <nav id="mobile-menu" class="mobile-nav" aria-label="Menu móvel">
       <a href="index.html">Início</a>
       <a href="pages/servicos.html">Serviços</a>
       <a href="pages/planos.html">Planos</a>
@@ -46,130 +56,228 @@
       <div class="mobile-divider"></div>
       <a href="https://SEU-LINK-PORTAL-CLIENTE" target="_blank" rel="noopener">Portal do Cliente</a>
       <a href="https://SEU-LINK-PORTAL-FUNCIONARIO" target="_blank" rel="noopener">Portal do Funcionário</a>
-      <a class="mobile-whatsapp" href="https://wa.me/556130253145" data-wa-topic="Atendimento inicial" target="_blank" rel="noopener">Falar no WhatsApp</a>
+      <a class="mobile-whatsapp" href="https://wa.me/556130253145" data-wa-topic="Diagnóstico inicial" target="_blank" rel="noopener">Falar no WhatsApp</a>
     </nav>
   </header>
 
   <main>
-    <section class="hero" id="inicio">
-      <div class="hero-bg" aria-hidden="true"></div>
-      <div class="container hero-content">
-        <div class="hero-text reveal-left">
-          <div class="badge"><i class="fa-solid fa-globe"></i> Atendimento em Valparaíso, Brasília e online</div>
-          <h1>Contabilidade <span class="highlight">consultiva</span> para empresas que querem crescer com controle e previsibilidade.</h1>
-          <p class="hero-lead">A Vital & Marques combina rotina contábil impecável com suporte estratégico para decisões mais seguras, redução de riscos e crescimento sustentável.</p>
-          <div class="cta-row">
-            <a href="https://wa.me/556130253145" data-wa-topic="Consultoria estratégica" class="btn-cta" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Falar com especialista</a>
-            <a href="pages/planos.html" class="btn-secondary">Ver planos</a>
+    <!-- =======================================================
+         HERO — prioridade máxima: composição premium balanceada
+         ======================================================= -->
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="container hero-grid">
+        <!-- Coluna esquerda: copy principal e CTAs -->
+        <div class="reveal" data-parallax>
+          <span class="kicker"><i class="fa-solid fa-sparkles"></i> assessoria contábil premium b2b</span>
+          <h1>A base contábil que organiza sua operação e dá segurança para crescer.</h1>
+          <p>Na Vital & Marques, sua empresa sai do improviso e passa a operar com previsibilidade. Estruturamos rotina contábil, fiscal e trabalhista com método, clareza de escopo e atendimento consultivo de alto padrão.</p>
+
+          <!-- Onde alterar botões principais da hero -->
+          <div class="hero-ctas">
+            <a class="btn-whatsapp" href="https://wa.me/556130253145" data-wa-topic="Diagnóstico para minha empresa" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Falar com especialista</a>
+            <a class="btn-primary" href="pages/planos.html">Comparar planos</a>
           </div>
-          <div class="trust-icons">
-            <span><i class="fa-solid fa-check-circle"></i> Clareza no atendimento</span>
-            <span><i class="fa-solid fa-check-circle"></i> Gestão de prazos e riscos</span>
-            <span><i class="fa-solid fa-check-circle"></i> Suporte consultivo real</span>
+
+          <ul class="trust-row" aria-label="Sinais de confiança">
+            <li><i class="fa-solid fa-shield"></i> Conformidade fiscal com previsibilidade</li>
+            <li><i class="fa-solid fa-list-check"></i> Rotina com processo e SLA de resposta</li>
+            <li><i class="fa-solid fa-users-gear"></i> Atendimento consultivo e próximo</li>
+          </ul>
+        </div>
+
+        <!-- Coluna direita: composição premium (substitui bloco antigo) -->
+        <aside class="hero-composition reveal" data-parallax aria-label="Composição estratégica da hero">
+          <div class="composition-top">
+            <h3>Operação contábil com padrão de gestão.</h3>
+            <p>Uma estrutura visual de entregas, indicadores e suporte para decisões seguras.</p>
           </div>
-          <div class="hero-mini-stats">
-            <article><strong>Atendimento premium</strong><span>Fluxo organizado e comunicação objetiva</span></article>
-            <article><strong>Visão estratégica</strong><span>Fiscal, DP, societário e planejamento</span></article>
+          <div class="composition-grid">
+            <article class="composition-item"><strong>Onboarding guiado</strong><span>Transição com checklist e cronograma.</span></article>
+            <article class="composition-item"><strong>Ritual de atendimento</strong><span>Canais, prioridades e rotina definidos.</span></article>
+            <article class="composition-item"><strong>Fiscal + DP em dia</strong><span>Fluxo contínuo para reduzir passivos.</span></article>
+            <article class="composition-item"><strong>Visão de crescimento</strong><span>Suporte consultivo para decisões-chave.</span></article>
           </div>
-        </div>
-
-        <div class="hero-visual reveal-right">
-          <div class="hero-panel">
-            <div class="hero-panel-top">
-              <h3>Estrutura contábil que gera confiança para decidir.</h3>
-              <p>Mais do que cumprir obrigações: entregamos uma base profissional para a empresa operar com segurança e crescer com organização.</p>
-            </div>
-            <div class="hero-panel-grid">
-              <article class="panel-item"><i class="fa-solid fa-file-invoice-dollar"></i><strong>Fiscal inteligente</strong><span>Conformidade e oportunidade tributária.</span></article>
-              <article class="panel-item"><i class="fa-solid fa-users-gear"></i><strong>DP estruturado</strong><span>Rotina trabalhista sem improviso.</span></article>
-              <article class="panel-item"><i class="fa-solid fa-building"></i><strong>Societário ágil</strong><span>Abertura, ajustes e regularização.</span></article>
-              <article class="panel-item"><i class="fa-solid fa-chart-line"></i><strong>Gestão consultiva</strong><span>Leitura de cenário e orientação estratégica.</span></article>
-            </div>
-          </div>
-          <img src="assets/img/hero-modern.svg" alt="Painel de gestão contábil" class="hero-media" />
-          <div class="hero-floating-card"><i class="fa-solid fa-star"></i><div><strong>Relacionamento próximo</strong><span>Atendimento claro, profissional e consultivo.</span></div></div>
-        </div>
+          <div class="composition-footer"><strong>Diferencial Vital & Marques:</strong> proximidade com método, comunicação clara e execução com previsibilidade.</div>
+        </aside>
       </div>
     </section>
 
-    <section class="authority-strip">
-      <div class="container authority-strip-grid">
-        <div class="authority-item"><i class="fa-solid fa-briefcase"></i><span>Especialistas em empresas de serviços</span></div>
-        <div class="authority-item"><i class="fa-solid fa-shield"></i><span>Compliance e segurança fiscal</span></div>
-        <div class="authority-item"><i class="fa-solid fa-handshake"></i><span>Atendimento consultivo contínuo</span></div>
-        <div class="authority-item"><i class="fa-solid fa-location-dot"></i><span>Atuação presencial e nacional</span></div>
+    <!-- Faixa institucional de autoridade -->
+    <section class="section-band">
+      <div class="container band-grid">
+        <div class="band-chip">Atendimento consultivo com rotina definida</div>
+        <div class="band-chip">Portal do Cliente + Portal do Funcionário</div>
+        <div class="band-chip">Presencial em GO/DF e atendimento online</div>
       </div>
     </section>
 
-    <section class="section-padding section-light">
+    <!-- Seção de proposta de valor -->
+    <section class="section section-contrast">
       <div class="container">
-        <div class="section-header reveal-up">
-          <h2>O que resolvemos na prática</h2>
-          <p>Transformamos desorganização contábil em processo, previsibilidade e base sólida para crescimento.</p>
+        <div class="section-header reveal">
+          <span class="kicker">proposta de valor</span>
+          <h2>O que sua empresa passa a ter com a Vital & Marques</h2>
+          <p>Uma base contábil que reduz risco, organiza operação e melhora o nível de gestão.</p>
         </div>
-        <div class="services-grid">
-          <article class="service-card reveal-up"><i class="fa-solid fa-receipt"></i><h3>Risco fiscal reduzido</h3><p>Mais controle sobre obrigações e menos exposição a multas e retrabalho.</p></article>
-          <article class="service-card reveal-up"><i class="fa-solid fa-clock"></i><h3>Operação com ritmo</h3><p>Prazos, demandas e rotinas em fluxo definido e acompanhamento contínuo.</p></article>
-          <article class="service-card reveal-up"><i class="fa-solid fa-chart-pie"></i><h3>Decisões melhores</h3><p>Informação contábil organizada para apoiar estratégia e crescimento.</p></article>
+        <div class="card-grid col-3">
+          <article class="premium-card reveal"><i class="fa-solid fa-gauge-high"></i><h3>Previsibilidade operacional</h3><p>Prazos, rotinas e responsabilidades definidos para sua empresa operar com tranquilidade.</p></article>
+          <article class="premium-card reveal"><i class="fa-solid fa-file-circle-check"></i><h3>Conformidade sem surpresa</h3><p>Fiscal, contábil e DP com método preventivo e acompanhamento contínuo.</p></article>
+          <article class="premium-card reveal"><i class="fa-solid fa-arrow-trend-up"></i><h3>Base para crescimento</h3><p>Dados organizados para decisões estratégicas mais seguras.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="section-padding">
+    <!-- Seção de serviços resumidos -->
+    <section class="section section-soft">
       <div class="container">
-        <div class="section-header reveal-up"><h2>Como funciona nosso atendimento</h2><p>Método claro para sua empresa saber o que esperar em cada etapa.</p></div>
-        <div class="process-grid">
-          <article class="process-card reveal-up"><span class="process-step">1</span><h3>Diagnóstico inicial</h3><p>Mapeamos cenário, riscos, gargalos e prioridade de ação.</p></article>
-          <article class="process-card reveal-up"><span class="process-step">2</span><h3>Plano de rotina</h3><p>Definimos fluxo operacional, escopo e canais de atendimento.</p></article>
-          <article class="process-card reveal-up"><span class="process-step">3</span><h3>Execução guiada</h3><p>Conduzimos as entregas com comunicação contínua e objetiva.</p></article>
+        <div class="section-header reveal">
+          <span class="kicker">serviços por valor gerado</span>
+          <h2>Serviços estruturados para o que realmente importa</h2>
+          <p>Cada frente foi desenhada para resolver um problema real da gestão empresarial.</p>
+        </div>
+        <div class="card-grid col-4">
+          <article class="premium-card reveal"><i class="fa-solid fa-building-circle-check"></i><h3>Abertura e regularização</h3><p>Constituição, alteração e regularização com segurança.</p></article>
+          <article class="premium-card reveal"><i class="fa-solid fa-receipt"></i><h3>Fiscal e tributário</h3><p>Apuração e orientação para reduzir risco e manter eficiência.</p></article>
+          <article class="premium-card reveal"><i class="fa-solid fa-users"></i><h3>Departamento pessoal</h3><p>Folha e rotinas trabalhistas com controle de ponta a ponta.</p></article>
+          <article class="premium-card reveal"><i class="fa-solid fa-lightbulb"></i><h3>Atendimento consultivo</h3><p>Leitura de cenário e orientação de decisão para gestão.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="section-padding section-soft">
+    <!-- Seção de processo -->
+    <section class="section">
       <div class="container">
-        <div class="section-header reveal-up"><h2>Para quem é ideal</h2><p>Empresas que querem profissionalizar a gestão contábil e crescer com segurança.</p></div>
-        <div class="reasons-grid">
-          <article class="reason-card reveal-up"><i class="fa-solid fa-building"></i><h3>Empresas em crescimento</h3><p>Negócios que precisam de estrutura para escalar com consistência.</p></article>
-          <article class="reason-card reveal-up"><i class="fa-solid fa-sitemap"></i><h3>Operações mais complexas</h3><p>Rotinas com maior volume, equipe ou exigência regulatória.</p></article>
-          <article class="reason-card reveal-up"><i class="fa-solid fa-compass"></i><h3>Empresários que querem clareza</h3><p>Quem busca um parceiro estratégico, não só execução operacional.</p></article>
+        <div class="section-header reveal">
+          <span class="kicker">como funciona</span>
+          <h2>Um fluxo claro para sua empresa saber exatamente o que esperar</h2>
+        </div>
+        <div class="card-grid col-3">
+          <article class="premium-card reveal"><i class="fa-solid fa-magnifying-glass-chart"></i><h3>1. Diagnóstico</h3><p>Mapeamento de cenário, riscos e prioridades da operação.</p></article>
+          <article class="premium-card reveal"><i class="fa-solid fa-diagram-project"></i><h3>2. Estruturação</h3><p>Definição de escopo, rotina e canais de atendimento.</p></article>
+          <article class="premium-card reveal"><i class="fa-solid fa-bolt"></i><h3>3. Execução + acompanhamento</h3><p>Rotina em dia com suporte consultivo para evolução.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="section-padding">
+    <!-- =======================================================
+         PLANOS — destaque comercial com contraste forte
+         ======================================================= -->
+    <section class="section section-contrast">
       <div class="container">
-        <div class="section-header reveal-up"><h2>Planos sob medida para cada fase</h2><p>Escolha o nível de suporte certo para o momento do seu negócio.</p></div>
-        <div class="plans-preview-grid">
-          <article class="plan-preview-card reveal-up"><div class="plan-badge">Essencial</div><h3>Base operacional sólida</h3><p>Para empresas que precisam organizar o dia a dia com segurança.</p><a href="pages/planos.html" class="btn-outline">Comparar plano</a></article>
-          <article class="plan-preview-card featured reveal-up"><div class="plan-badge">Profissional</div><h3>Mais acompanhamento</h3><p>Ideal para operações em evolução que exigem maior proximidade.</p><a href="pages/planos.html" class="btn-outline">Comparar plano</a></article>
-          <article class="plan-preview-card reveal-up"><div class="plan-badge">Estratégico</div><h3>Visão de crescimento</h3><p>Para empresas com necessidade consultiva e suporte de alto nível.</p><a href="pages/planos.html" class="btn-outline">Comparar plano</a></article>
+        <div class="section-header reveal">
+          <span class="kicker">planos</span>
+          <h2>Escolha o nível de atendimento ideal para o momento da sua empresa</h2>
+          <p>Diferenças claras de escopo, proximidade e profundidade consultiva.</p>
+        </div>
+
+        <div class="plan-grid">
+          <article class="plan-card reveal">
+            <span class="plan-tag">Essencial</span>
+            <h3>Operação em ordem</h3>
+            <div class="plan-meta">Ideal para: empresa em estruturação e rotina menos complexa.</div>
+            <ul>
+              <li><i class="fa-solid fa-check"></i>Rotina contábil, fiscal e DP recorrente</li>
+              <li><i class="fa-solid fa-check"></i>Calendário de obrigações e entregas mensais</li>
+              <li><i class="fa-solid fa-check"></i>Atendimento padrão em horário comercial</li>
+            </ul>
+            <a class="btn-whatsapp" href="https://wa.me/556130253145" data-wa-topic="Plano Essencial" target="_blank" rel="noopener">Quero o Essencial</a>
+          </article>
+
+          <article class="plan-card featured reveal">
+            <span class="plan-tag">Profissional · recomendado</span>
+            <h3>Acompanhamento consultivo</h3>
+            <div class="plan-meta">Ideal para: empresa em crescimento com mais tomada de decisão.</div>
+            <ul>
+              <li><i class="fa-solid fa-check"></i>Tudo do Essencial + reunião consultiva mensal</li>
+              <li><i class="fa-solid fa-check"></i>Prioridade de resposta e suporte de decisão</li>
+              <li><i class="fa-solid fa-check"></i>Leitura de indicadores gerenciais</li>
+            </ul>
+            <a class="btn-whatsapp" href="https://wa.me/556130253145" data-wa-topic="Plano Profissional" target="_blank" rel="noopener">Quero o Profissional</a>
+          </article>
+
+          <article class="plan-card reveal">
+            <span class="plan-tag">Estratégico</span>
+            <h3>Alta performance contábil</h3>
+            <div class="plan-meta">Ideal para: operação mais exigente com foco em expansão.</div>
+            <ul>
+              <li><i class="fa-solid fa-check"></i>Tudo do Profissional + planejamento tributário recorrente</li>
+              <li><i class="fa-solid fa-check"></i>Consultoria com maior profundidade</li>
+              <li><i class="fa-solid fa-check"></i>Suporte ampliado para decisões críticas</li>
+            </ul>
+            <a class="btn-whatsapp" href="https://wa.me/556130253145" data-wa-topic="Plano Estratégico" target="_blank" rel="noopener">Quero o Estratégico</a>
+          </article>
+        </div>
+
+        <div class="plan-extras">
+          <article class="plan-extra-card reveal"><h4>O que a assessoria faz por você</h4><p>Transforma obrigações em processo confiável e protege a empresa de risco fiscal e trabalhista.</p></article>
+          <article class="plan-extra-card reveal"><h4>O que muda entre os planos</h4><p>Evolução de proximidade, frequência consultiva e profundidade de análise conforme maturidade do negócio.</p></article>
+        </div>
+
+        <div class="hero-ctas" style="justify-content:center; margin-top: 24px;">
+          <a class="btn-primary" href="pages/planos.html">Ver comparativo completo</a>
         </div>
       </div>
     </section>
 
+    <!-- FAQ principal da home -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="kicker">faq</span>
+          <h2>Dúvidas comuns antes da contratação</h2>
+        </div>
+        <div class="faq-list">
+          <article class="faq-item reveal open"><button class="faq-q" aria-expanded="true">Como funciona o atendimento da Vital & Marques?<i class="fa-solid fa-plus"></i></button><div class="faq-a"><p>Começa com diagnóstico, passa por definição de escopo e segue com execução contínua + suporte consultivo.</p></div></article>
+          <article class="faq-item reveal"><button class="faq-q" aria-expanded="false">O atendimento é presencial ou online?<i class="fa-solid fa-plus"></i></button><div class="faq-a"><p>Os dois. Atendemos presencialmente na região e online com o mesmo padrão de organização.</p></div></article>
+          <article class="faq-item reveal"><button class="faq-q" aria-expanded="false">Posso trocar de contador com apoio da equipe?<i class="fa-solid fa-plus"></i></button><div class="faq-a"><p>Sim. Conduzimos onboarding e transição com checklist técnico e cronograma.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA final -->
     <section class="final-cta">
-      <div class="container relative reveal-up">
-        <h2>Vamos estruturar sua contabilidade para crescer com segurança?</h2>
-        <p>Fale com a Vital & Marques e receba uma orientação inicial estratégica para o seu cenário empresarial.</p>
-        <a href="https://wa.me/556130253145" data-wa-topic="Diagnóstico inicial" class="btn-cta" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Iniciar conversa agora</a>
+      <div class="container final-cta-box reveal">
+        <h2>Se sua empresa busca clareza, processo e suporte real, este é o próximo passo.</h2>
+        <p>Converse com a Vital & Marques e receba uma orientação inicial para definir o melhor plano de atendimento.</p>
+        <a class="btn-whatsapp" href="https://wa.me/556130253145" data-wa-topic="Quero evoluir minha contabilidade" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Iniciar conversa no WhatsApp</a>
       </div>
     </section>
   </main>
 
+  <!-- =======================================================
+       FOOTER — links e dados institucionais
+       ======================================================= -->
   <footer>
-    <div class="container footer-content">
+    <div class="container footer-grid">
       <div class="footer-col">
-        <div class="brand"><img src="assets/img/logo-vital-marques.svg" class="brand-logo" alt="Logo Vital & Marques" /><span class="brand-text"><strong>Vital & Marques</strong><small>Assessoria Contábil</small></span></div>
-        <p>Assessoria contábil estratégica para empresas que buscam profissionalismo, previsibilidade e crescimento com base sólida.</p>
+        <a href="index.html" class="brand">
+          <img src="assets/img/logo-vital-marques.svg" class="brand-logo" alt="Logo da Vital & Marques" />
+          <span class="brand-text"><strong>Vital & Marques</strong><small>Assessoria Contábil</small></span>
+        </a>
+        <p>Contabilidade consultiva para empresas que valorizam organização operacional, previsibilidade e crescimento com segurança.</p>
       </div>
-      <div class="footer-col"><h3>Páginas</h3><a href="pages/servicos.html">Serviços</a><a href="pages/planos.html">Planos</a><a href="pages/sobre.html">Sobre</a><a href="pages/contato.html">Contato</a></div>
-      <div class="footer-col"><h3>Contato</h3><p><i class="fa-solid fa-phone"></i> (61) 3025-3145</p><p><i class="fa-solid fa-envelope"></i> contato@vitalemarques.com.br</p><p><i class="fa-solid fa-location-dot"></i> Valparaíso de Goiás - GO</p></div>
+      <div class="footer-col">
+        <h3>Navegação</h3>
+        <a href="pages/servicos.html">Serviços</a>
+        <a href="pages/planos.html">Planos</a>
+        <a href="pages/sobre.html">Sobre</a>
+        <a href="pages/contato.html">Contato</a>
+      </div>
+      <div class="footer-col">
+        <h3>Contato</h3>
+        <p>(61) 3025-3145</p>
+        <p>contato@vitalemarques.com.br</p>
+        <p>Valparaíso de Goiás - GO</p>
+      </div>
     </div>
-    <div class="copy">© <span id="year"></span> Vital & Marques Assessoria Contábil. Todos os direitos reservados.</div>
+    <div class="container copy">© <span id="year"></span> Vital & Marques Assessoria Contábil. Todos os direitos reservados.</div>
   </footer>
 
-  <a href="https://wa.me/556130253145" data-wa-topic="Contato rápido" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><span class="float-text">Atendimento</span><i class="fab fa-whatsapp"></i></a>
+  <!-- Botão flutuante WhatsApp (somente ícone) -->
+  <a href="https://wa.me/556130253145" data-wa-topic="Contato rápido" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
 
   <script src="assets/js/script.js" defer></script>
 </body>

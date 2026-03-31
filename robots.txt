@@ -1,0 +1,34 @@
+# =========================================================
+# VITAL & MARQUES — CONFIGURAÇÃO DE CRAWLERS
+# =========================================================
+
+# Permitir todos os buscadores
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.git/
+
+# Específico para Googlebot
+User-agent: Googlebot
+Allow: /
+
+# Específico para Bingbot
+User-agent: Bingbot
+Allow: /
+
+# Bloquear bots ruins
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+# Delay para respeitar servidor (ms)
+Crawl-delay: 1
+
+# Arquivo de sitemap (criar depois se necessário)
+# Sitemap: https://www.vitalemarques.com/sitemap.xml

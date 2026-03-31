@@ -1,113 +1,140 @@
-# Vital & Marques — Site Institucional
+# Vital & Marques - Site Institucional
 
-Site institucional da **Vital & Marques Assessoria Contábil**, desenvolvido para apresentar a marca, fortalecer a presença digital da empresa e comunicar seus serviços, planos e canais de atendimento com clareza, organização e credibilidade.
+Site institucional da Vital & Marques Assessoria Contabil, com foco em autoridade de marca, clareza comercial e conversao de visitantes em contatos qualificados.
 
----
+![Logo Vital & Marques](assets/img/logo-preta.png)
 
-## Sobre o projeto
+## Visao Geral
+Este projeto foi desenvolvido como um website estatico profissional para apresentar:
 
-A proposta deste site é traduzir digitalmente o posicionamento da **Vital & Marques**: uma assessoria contábil com foco em atendimento profissional, comunicação objetiva, rotina organizada e apoio ao crescimento das empresas atendidas.
+1. Posicionamento da empresa.
+2. Portifolio de servicos contabeis.
+3. Estrutura de planos de atendimento.
+4. Canais de contato e localizacao.
+5. Acesso rapido ao login do portal Onvio.
 
-O projeto foi construído com uma estrutura leve, moderna e responsiva, priorizando boa experiência de navegação em diferentes dispositivos e uma apresentação visual alinhada ao perfil institucional da marca.
+## Galeria Visual
+As imagens abaixo representam a identidade visual utilizada nas principais secoes do site.
 
----
+![Hero Home](assets/img/hero-bg-city.jpg)
+![Sobre](assets/img/bg-sobre.jpg)
+![Servicos](assets/img/bg-servicos.jpg)
+![Planos](assets/img/bg-planos.jpg)
+![Contato](assets/img/bg-contato.jpg)
 
-## Estrutura do projeto
+## Arquitetura do Projeto
+```text
+vitalemarques-site/
+	assets/
+		css/
+			style.css
+		js/
+			script.js
+		img/
+			logo-preta.png
+			favicon-logo.png
+			hero-bg-city.jpg
+			bg-sobre.jpg
+			bg-servicos.jpg
+			bg-planos.jpg
+			bg-contato.jpg
+	pages/
+		sobre.html
+		servicos.html
+		planos.html
+		contato.html
+	index.html
+	privacidade.html
+	robots.txt
+	.htaccess
+	README.md
+```
+
+## Mapa de Paginas
+| Pagina | Objetivo |
+|---|---|
+| `index.html` | Apresentacao institucional, diferenciais, planos e CTA principal |
+| `pages/servicos.html` | Detalhamento dos servicos e beneficios operacionais |
+| `pages/planos.html` | Estrutura comercial dos planos e comparacao de escopos |
+| `pages/sobre.html` | Posicionamento, metodo de trabalho e credibilidade |
+| `pages/contato.html` | Contato, mapa, endereco e canais de atendimento |
+| `privacidade.html` | Politica de privacidade e diretrizes LGPD |
+
+## Stack Tecnologica
+1. HTML5 sem framework.
+2. CSS3 com design system baseado em variaveis.
+3. JavaScript vanilla com padroes modernos de performance.
+4. Font Awesome para iconografia.
+5. Google Fonts (Manrope).
+
+## Recursos de UX/UI Implementados
+1. Header fixo com estado dinâmico em scroll.
+2. Menu mobile com controle de foco e fechamento por tecla ESC.
+3. Revelacao progressiva de secoes via IntersectionObserver.
+4. Scroll progress bar no topo.
+5. Microinteracoes em botoes e cards (magnetic/tilt).
+6. CTA integrados ao WhatsApp com mensagem contextual.
+7. Mapa e bloco de atendimento presencial na pagina de contato.
+
+## Seguranca e Confiabilidade
+O projeto recebeu uma camada de seguranca para ambiente estatico:
+
+1. Content Security Policy (CSP) nas paginas.
+2. Referrer policy e hardening basico no HTML.
+3. Arquivo `.htaccess` com headers de seguranca e cache.
+4. `robots.txt` para controle de rastreadores.
+5. Validacoes no JavaScript para links de WhatsApp.
+
+## SEO e Performance
+1. Titles e descriptions por pagina.
+2. Estrutura semantica para melhor indexacao.
+3. Imagens comprimidas e fundo otimizado por secao.
+4. Cache de recursos estaticos via `.htaccess`.
+5. Carregamento leve por nao usar frameworks pesados.
+
+## Portais (Cliente e Funcionario)
+No estado atual, ambos os botoes direcionam para o login estavel:
+
+`https://onvio.com.br/login/`
+
+Observacao: quando a empresa tiver URLs dedicadas por perfil, basta substituir os `href` dos botoes nos headers e menus mobile.
+
+## Como Executar Localmente
+Como o projeto e estatico, ha duas formas simples:
+
+1. Abrir `index.html` direto no navegador.
+2. Rodar um servidor local (recomendado):
 
 ```bash
-VITALEMARQUES-SITE/
-│
-├── assets/
-│   ├── css/
-│   │   └── style.css
-│   ├── js/
-│   │   └── script.js
-│   └── img/
-│
-├── pages/
-│   ├── contato.html
-│   ├── planos.html
-│   ├── servicos.html
-│   └── sobre.html
-│
-├── index.html
-└── README.md
+# Python 3
+python -m http.server 5500
+
+# Acesse
+http://localhost:5500
 ```
-## Páginas
-Home
 
-A página inicial apresenta a proposta da empresa, seus diferenciais, áreas de atuação, prévia dos planos, estrutura de atendimento e chamadas para contato.
+## Publicacao
+Pode ser publicado em qualquer hosting estatico, por exemplo:
 
-Serviços
+1. GitHub Pages
+2. Netlify
+3. Vercel (modo static)
+4. Hostinger / cPanel (Apache)
 
-Página dedicada à apresentação dos principais serviços oferecidos pela Vital & Marques, com foco em organização da rotina empresarial, conformidade e suporte contábil.
+Para Apache, manter `.htaccess` na raiz do projeto.
 
-Planos
+## Checklist de Qualidade
+1. Responsividade validada em desktop e mobile.
+2. Links principais e CTAs revisados.
+3. Favicon configurado com identidade da marca.
+4. Politica de privacidade disponivel.
+5. Estrutura pronta para receber links finais dos portais dedicados.
 
-Área de apresentação dos planos de atendimento, mostrando diferentes níveis de suporte, escopo e profundidade de acompanhamento.
+## Roadmap Sugerido
+1. Adicionar links dedicados de portal (cliente e funcionario).
+2. Publicar sitemap.xml.
+3. Conectar analytics com consentimento de cookies.
+4. Inserir capturas reais do site no README (desktop e mobile).
 
-Sobre
-
-Página institucional voltada ao posicionamento da empresa, sua proposta de valor e a forma como conduz o relacionamento com os clientes.
-
-Contato
-
-Página com informações de contato, localização, horário de atendimento e acesso rápido ao WhatsApp.
-
-## Tecnologias utilizadas
-
-HTML5
-
-CSS3
-
-JavaScript
-
-Google Fonts
-
-Font Awesome
-
-## Destaques do projeto
-
-layout institucional e responsivo
-
-navegação clara entre páginas
-
-menu desktop e menu mobile
-
-header fixo com comportamento dinâmico
-
-seções organizadas com hierarquia visual
-
-foco em apresentação profissional da marca
-
-integração com botão flutuante de WhatsApp
-
-acesso rápido ao Portal do Cliente e Portal do Funcionário
-
-## Responsividade
-
-O site foi estruturado para oferecer uma navegação consistente em diferentes resoluções, com adaptação de layout para desktop, notebook, tablet e smartphone.
-
-## Objetivo
-
-Este projeto foi desenvolvido para comunicar a identidade da Vital & Marques de forma mais forte no ambiente digital, reforçando atributos como:
-
-profissionalismo
-
-organização
-
-previsibilidade
-
-clareza no atendimento
-
-segurança na rotina contábil
-
-proximidade com o cliente
-
-Execução local
-
-Por se tratar de um site estático, basta abrir o arquivo index.html em um navegador para visualizar o projeto localmente.
-
-## Desenvolvimento
-
-Projeto desenvolvido para a Vital & Marques Assessoria Contábil, com foco em presença institucional, comunicação estratégica e experiência de navegação.
+## Autor e Contexto
+Projeto institucional desenvolvido para Vital & Marques Assessoria Contabil, com foco em comunicacao estrategica, presenca digital e experiencia profissional.

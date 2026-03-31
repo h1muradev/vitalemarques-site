@@ -1,0 +1,105 @@
+# =========================================================
+# VITAL & MARQUES — CONFIGURAÇÕES DE SEGURANÇA HTTP
+# Arquivo .htaccess para Apache
+# =========================================================
+
+# Ativar mod_rewrite
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  
+  # Redirecionar HTTP para HTTPS (descomente se tiver SSL)
+  # RewriteCond %{HTTPS} off
+  # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# =========================================================
+# HEADERS DE SEGURANÇA HTTP
+# =========================================================
+<IfModule mod_headers.c>
+  # Previne clickjacking - site não pode ser inserido em iframe
+  Header always set X-Frame-Options "SAMEORIGIN"
+  
+  # Previne MIME-sniffing - força o Content-Type correto
+  Header always set X-Content-Type-Options "nosniff"
+  
+  # Ativa proteção contra XSS no navegador
+  Header always set X-XSS-Protection "1; mode=block"
+  
+  # Força HTTPS para todos os subdomínios (6 meses)
+  # Descomente apenas quando tiver SSL configurado
+  # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+  
+  # Referrer Policy - não vazir origem em links externos
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  
+  # Permissions Policy - controla recursos do navegador
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=()"
+  
+  # Disabilita cache em páginas sensíveis (opcional)
+  # Header always set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+</IfModule>
+
+# =========================================================
+# COMPRESSÃO
+# =========================================================
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>
+
+# =========================================================
+# CACHE - Melhor performance e menos requisições
+# =========================================================
+<IfModule mod_expires.c>
+  ExpiresActive On
+  
+  # Imagens (30 dias)
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/gif "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  
+  # CSS e JavaScript (30 dias)
+  ExpiresByType text/css "access plus 30 days"
+  ExpiresByType application/javascript "access plus 30 days"
+  
+  # Fonts (1 ano)
+  ExpiresByType font/ttf "access plus 1 year"
+  ExpiresByType font/otf "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  
+  # HTML (não cachear - sempre fresh)
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+# =========================================================
+# BLOQUEAR ACESSO A ARQUIVOS SENSÍVEIS
+# =========================================================
+<FilesMatch "\.php$|\.env$|\.git|\.gitignore|^\.">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
+
+# =========================================================
+# PROTEGER DIRETÓRIOS - Listar conteúdo desabilitado
+# =========================================================
+<IfModule mod_autoindex.c>
+  Options -Indexes
+</IfModule>
+
+# =========================================================
+# GZIP ESTÁTICO
+# =========================================================
+<IfModule mod_gzip.c>
+  mod_gzip_on Yes
+  mod_gzip_cmode 'gzip'
+  mod_gzip_temp_path '/tmp'
+  mod_gzip_types text/plain text/html text/xml text/css text/javascript application/javascript application/json
+</IfModule>
